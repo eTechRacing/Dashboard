@@ -1,0 +1,5 @@
+DRC Rules Export File for PCB: E:\e-tech\DASH+PLACA\dash+brake+TSAL\2020\miDash1-2019_2020\Dash_10.0\Dashboard_10.0.PcbDoc
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.00
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=11.81
+RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=11.81
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0

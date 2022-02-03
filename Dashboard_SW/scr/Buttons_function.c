@@ -1,0 +1,142 @@
+#include <Buttons_function.h>
+
+//STEERING BUTTONS
+void SteeringButtons()
+{
+   if (input(Button_UP)&&(input(Button_RIGHT)))
+   {
+      while(input(Button_UP)&&(input(Button_RIGHT)))
+      {
+         bothSteeringButtons=1;                  
+      }
+   }
+   enableSteeringCounter=1;
+}
+
+void ScrollDrivingModes()
+{
+   left_or_right();
+   if (cursor==1)//SI ESTAMOS EN EL CENTRO DE LA PANTALLA,
+   {
+      piloto=0;//No tenemos ninguno de los 2 pilotos seleccionados
+      sendDashMode=0;
+      //UP BUTTON
+      if(input(Button_UP))
+      {
+         while(input(Button_UP));//CAMBIAR DE ORDEN LOS CASE PARA QUE UP SEA SUMAR
+         {
+            if(competicion_seleccionada>1)
+            {
+               competicion_seleccionada--;
+            }
+            else
+            {
+               competicion_seleccionada=6;
+            }
+            refresh_display=1;
+         }
+      }
+      
+      //DOWN BUTTON
+      if(input(BUTTON_DOWN))
+      {
+         while(input(BUTTON_DOWN));
+         {
+            if(competicion_seleccionada<6)
+            {
+               competicion_seleccionada++;
+            }
+            else
+            {
+               competicion_seleccionada=1;
+            }
+            refresh_display=1;
+         }
+      }
+   }
+   
+   if (cursor!=1) //si ets a l'opci? esquerra o a l'opci? dreta
+   {
+   SendDashMode=1;//Mandamos a ETAS EL MODO
+   //VIGILAR QUE EL CASE DE SEND_DASH_MODE COINCIDA CON EL CASE DEL CURSOR
+   //VDC PARAMETERS BUTTON
+   if(input(Button_VDC))
+      {
+         while(input(Button_VDC));
+         {
+            if(competicion_seleccionada!=2)//SI NO ESTAMOS EN LA OPCION CUSTOM
+            {
+               Pantalla_actual=2; //ABANS VISUALITZA LA INFORMACI?, VDC Y CUSTOM
+            }
+         }
+      }
+      
+   //SELECT BUTTON 
+   if(input(Button_SELECT)||bothSteeringButtons==1)
+      {
+         while((input(Button_SELECT)||bothSteeringButtons==1));
+         {
+            if(competicion_seleccionada!=2||(competicion_seleccionada==2&&idCustom==2))//SI NO ESTAMOS SELECCIONANDO CUSTOM O ESTAMOS SELECCIONANDO EL CUSTOM DE ETAS,CONDICION PARA CORRER, PISAR FRENO Y UN BOTON O 2 DEL BOLANTE
+            {
+               if (percentatgeBrakeSensor>50)
+               {
+                  blank_rectangle(1, 1, 130, 64, 0);
+                  sendDashMode=0;//DEJAMOS DE MANDAR INFO DEL MODO DE CONDUCCION A ETAS
+                  EnableDrive=1;               
+                  output_high(BUZZER);
+                  normativeEnable=1;//PARA DESACTIVAR EL BUZZER 2.5 s DESPUES DE ENCENDERLO
+                  Pantalla_actual=3; //DIRECTAMENT A LA RACE SCREEN               
+               }
+            }
+            if(competicion_seleccionada==2&&idCustom==1)//abrir el menu custom desde la dash
+            {
+               Pantalla_actual=2; //en el main es diu que si ?s custom, que carregui MenuCustom()
+               sendDashMode=0;
+            }
+         }
+      }
+   }
+
+   //LEFT BUTTON
+   if(input(Button_LEFT)) //independentment del valor del cursor, s'ha de poder anar a la dreta o a l'esquerra
+   {
+        while(input(Button_LEFT));
+        {  
+             if(cursor>0)
+             {
+                 cursor--; 
+             }
+             else
+             {
+                 cursor=0;
+             }
+             refresh_display=1;  
+        }
+   }
+   
+   //RIGHT BUTTON
+   if(input(Button_RIGHT))
+   {
+        while(input(Button_RIGHT));
+        {
+             if(cursor<2)
+             {
+                 cursor++; //animaci? a la fletxa de la dreta
+             }
+             if(cursor>2)
+             {
+                 cursor=2;
+             }
+             refresh_display=1;
+        }
+   }
+   //REFRESCAR LA PANTALLA CADA VEZ QUE PULSEMOS UN BOTON
+   if (refresh_display == 1)
+   {                
+      blank_rectangle(1, 1, 130, 64, 0);
+      refresh_display=0;
+      scrollDrawing();      //para dibujar el menu en la pantalla
+   }
+}
+
+

@@ -1,0 +1,3 @@
+>>> Warning 204 "Project_Dashboard_2020-2021.c" Line 15(1,1): Condition always FALSE   CarState
+*** Error 12 "Project_Dashboard_2020-2021.c" Line 15(12,20): Undefined identifier
+C:\Users\34615\Desktop\Dashboard_2020-2021\Project_Dashboard_2020-2021.o ===>  1 Errors,  1 Warnings.

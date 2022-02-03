@@ -1,0 +1,13 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [Dashboard_10.0.PrjPcb]
+   Generated File[Dashboard_10.0.TXT]
+   Generated File[Dashboard_10.0-BoardEdgeRout.TXT]
+   Generated File[Dashboard_10.0.LDP]
+   Generated File[Dashboard_10.0.DRR]
+
+
+Files Generated   : 4
+Documents Printed : 0
+
+Finished Output Generation At 9:19:41 On 22/03/2021

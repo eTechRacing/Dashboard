@@ -1,0 +1,65 @@
+#include <draw_animation_blink.h>
+
+void blink_draws()
+   {
+      switch(cursor) //PARPADEO DE LOS DIBUJOS CUANDO LOS ESTEMOS SELECCIONANDO
+         {  
+            case 0: //ESQUERRA            
+            //////////////////////////////////////// fletxa esquerra               
+               if (toggle_envoltori==1)        
+                  {                            
+                      toggle_envoltori=0;      
+                      if (vegades_toggled==0)  //OFF
+                      {                        
+                        draw_line(21, 27, 21, 37, 0);
+                        draw_line(20, 28, 20, 36, 0);
+                        draw_line(19, 29, 19, 35, 0);
+                        draw_line(18, 30, 18, 34, 0);
+                        draw_line(17, 31, 17, 33, 0);
+                        draw_line(16, 32, 16, 32, 0);
+                         vegades_toggled++;    
+                      }                        
+                      else                     //ON
+                      {                        
+                        draw_line(21, 27, 21, 37, 1);
+                        draw_line(20, 28, 20, 36, 1);
+                        draw_line(19, 29, 19, 35, 1);
+                        draw_line(18, 30, 18, 34, 1);
+                        draw_line(17, 31, 17, 33, 1);
+                        draw_line(16, 32, 16, 32, 1);
+                         vegades_toggled=0;      
+                      }
+                     glcd_refresh();
+                  }
+            break;
+            
+            case 2: //DRETA
+            //////////////////////////////////////// fletxa dreta
+              if (toggle_envoltori==1)        
+                     {                            
+                         toggle_envoltori=0;      
+                         if (vegades_toggled==0)  
+                         {                        
+                           draw_line(108, 27, 108, 37, 0);
+                           draw_line(109, 28, 109, 36, 0);
+                           draw_line(110, 29, 110, 35, 0);
+                           draw_line(111, 30, 111, 34, 0);
+                           draw_line(112, 31, 112, 33, 0);
+                           draw_line(113, 32, 113, 32, 0);
+                            vegades_toggled++;    
+                         }                        
+                         else                     
+                         {                        
+                           draw_line(108, 27, 108, 37, 1);
+                           draw_line(109, 28, 109, 36, 1);
+                           draw_line(110, 29, 110, 35, 1);
+                           draw_line(111, 30, 111, 34, 1);
+                           draw_line(112, 31, 112, 33, 1);
+                           draw_line(113, 32, 113, 32, 1);
+                            vegades_toggled=0;      
+                         }
+                         glcd_refresh();
+                     }
+            break;      
+         }
+   }

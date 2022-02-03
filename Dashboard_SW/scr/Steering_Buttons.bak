@@ -1,0 +1,13 @@
+#include <Steering_Buttons.h>
+
+void SteeringButtons()
+{
+   if (input(Button_UP)&&(input(Button_RIGHT)))
+   {
+      while(input(Button_UP)&&(input(Button_RIGHT)))
+      {
+         bothSteeringButtons=1;                  
+      }
+   }
+   //enableSteeringCounter=1;
+}

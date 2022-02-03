@@ -1,0 +1,7 @@
+#ifndef MODIFICATION_CAN_H
+#define MODIFICATION_CAN_H
+
+#byte RXB0D1=0xF67
+#byte RXB0D2=0xF68
+
+#endif

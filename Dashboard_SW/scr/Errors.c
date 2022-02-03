@@ -1,0 +1,138 @@
+#include "Errors.h"
+
+void popUpWindow ()
+{
+   blank_rectangle(14, 7, 114, 57, 0);//Descubrir porque esta esto!!!!
+   draw_rectangle(14, 7, 114, 58, 1);//Dibuja un rectangulo
+   draw_rectangle(15, 8, 115, 59, 1);//Dibuja el mismo rectangulo anterior pero desplazado para hacer la linea mas gorda
+   writeError();//LLamamos a la función que escribe el error
+}
+
+void writeError ()
+{
+   if (SetaRightError==1)
+   {
+      blank_rectangle(24, 30, 114, 57, 0);      
+      draw_text("Seta Right", 20, 27, Tahoma7, 1);
+   }
+   else if (SetaLeftError==1)
+   {
+      blank_rectangle(24, 30, 114, 57, 0); 
+      draw_text("Seta Left", 20, 27, Tahoma7, 1);
+   }
+   else if (InertiaError==1)
+   {
+      blank_rectangle(24, 30, 114, 57, 0); 
+      draw_text("Inertia", 20, 27, Tahoma7, 1);
+   }
+   else if (BOTSerror==1)
+   {
+      blank_rectangle(24, 30, 114, 57, 0); 
+      draw_text("BOTS", 20, 27, Tahoma7, 1);
+   } 
+   else if (SetaCockpitErrorActual==1)
+   {
+      blank_rectangle(24, 30, 114, 57, 0); 
+      draw_text("Seta Cockpit", 20, 27, Tahoma7, 1);
+   }
+   else if (BMSerrorActual==1)
+   {
+      blank_rectangle(24, 30, 114, 57, 0); 
+      draw_text("BMS", 20, 27, Tahoma7, 1);
+   }
+   else if (IMDerrorActual==1)
+   {
+      blank_rectangle(24, 30, 114, 57, 0); 
+      draw_text("IMD", 20, 27, Tahoma7, 1);
+   }
+   else if (BSPDerror==1)
+   {
+      blank_rectangle(24, 30, 114, 57, 0); 
+      draw_text("BSPD", 20, 27, Tahoma7, 1);
+   }   
+   else if (HVBoxError==1)
+   {
+      blank_rectangle(24, 30, 114, 57, 0); 
+      draw_text("HV Box", 20, 27, Tahoma7, 1);
+   }
+   else if (HVDintckError==1)
+   {
+      blank_rectangle(24, 30, 114, 57, 0); 
+      draw_text("HVD Interlock", 20, 27, Tahoma7, 1);
+   }
+   else if (InverterLeftIntckError==1)
+   {
+      blank_rectangle(24, 30, 114, 57, 0); 
+      draw_text("Inverter Left Interlock", 20, 27, Tahoma7, 1);
+   }
+   else if (InverterRightIntckError==1)
+   {
+      blank_rectangle(24, 30, 114, 57, 0); 
+      draw_text("Inverter Right Interlock", 20, 27, Tahoma7, 1);
+   }
+   else if (TSMPintckerror==1)
+   {
+      blank_rectangle(24, 30, 114, 57, 0); 
+      draw_text("TSMP interlock", 20, 27, Tahoma7, 1);
+   }
+   else if (TSMSerror==1)
+   {
+      blank_rectangle(24, 30, 114, 57, 0); 
+      draw_text("TSMS", 20, 27, Tahoma7, 1);
+   }
+   else if (PackageInterlockError==1)
+   {
+      blank_rectangle(24, 30, 114, 57, 0); 
+      draw_text("Package Interlock", 20, 27, Tahoma7, 1);
+   }
+   else
+   {
+      draw_text("Oops! Something", 20, 17, Tahoma7, 1);
+      draw_text("went wrong...(", 20, 27, Tahoma7, 1);
+
+   }
+   glcd_refresh();
+}
+
+void deteccioShutdownError ()//Mirar la función de la libreria de CAN para saber cuanto se desplaza cada numero
+{
+   SetaRightError=(infoShutdownActual>>14)&1; //Desplazamos el bit correspondiente a SetaRight a la posición de la derecha el todo (LSB), y se miltiplica por el 1 binario, para poner a 0 los otros bits que no te interesan e igualar la variable a 1 si existe error
+   SetaLeftError=(infoShutdownActual>>13)&1;
+   InertiaError=(infoShutdownActual>>12)&1;
+   BOTSerror=(infoShutdownActual>>11)&1;
+   SetaCockpitErrorActual=(infoShutdownActual>>10)&1; 
+   BMSerrorActual=(infoShutdownActual>>9)&1; 
+   IMDerrorActual=(infoShutdownActual>>8)&1; 
+   BSPDerror=(infoShutdownActual>>7)&1; 
+   HVBoxError=(infoShutdownActual>>6)&1; 
+   HVDintckError=(infoShutdownActual>>5)&1; 
+   InverterLeftIntckError=(infoShutdownActual>>4)&1; 
+   InverterRightIntckError=(infoShutdownActual>>3)&1; 
+   TSMPintckerror=(infoShutdownActual>>2)&1;
+   TSMSerror=(infoShutdownActual>>1)&1; 
+   PackageInterlockError=(infoShutdownActual&1);
+   
+   IMD_error=((infoLEDs&0b00001000)>>3); //0=Error, el mensaje del IMD viene en la posicion 4 por eso lo desplazamos 3 veces a la derecha. Es error si llega un 0 porque ETAS esta diciendo todo el rato todo OK
+   BMS_error=((infoLEDs&0b00010000)>>4);
+   
+}
+
+void CheckNormativeErrors()
+{
+   if(IMD_Error==0) //per normativa, aquests leds han de fer latch quan hi ha error (no s'han d'apagar). El problema era que BMS enviava error just encendre i els LEDs es quedaven en latch. Per aix?, el primer missatge d'error ?s ignorat.
+   {
+      output_HIGH(LED_IMD);
+   }
+   else
+   {
+      output_LOW(LED_IMD);
+   }
+   if(BMS_Error==0)
+   {
+      output_HIGH(LED_AMS);
+   }
+   else
+   {
+      output_LOW(LED_AMS);
+   }
+}

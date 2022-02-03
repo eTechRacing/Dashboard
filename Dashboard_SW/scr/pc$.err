@@ -1,0 +1,16 @@
+*** Error 18 "CAN.c" Line 1(9,16): File can not be opened
+    Not in "E:\PROGRAMAS\CCS COMPILER\PICC\devices\CAN.h"
+    Not in "E:\PROGRAMAS\CCS COMPILER\PICC\drivers\CAN.h"
+    Not in "C:\Users\34615\Desktop\Dashboard\include\CAN.h"
+    Not in local "C:\Users\34615\Desktop\Dashboard_2020-2021\scr\CAN.h"
+*** Error 128 "CAN.c" Line 2(12,22): A #DEVICE required before this line
+*** "CAN.c" Line 5: Error #12: Undefined identifier   cobid
+*** "CAN.c" Line 6: Error #12: Undefined identifier   lengthCAN
+*** "CAN.c" Line 15: Error #12: Undefined identifier   cobid
+*** "CAN.c" Line 17: Error #12: Undefined identifier   CarState
+*** "CAN.c" Line 20: Error #12: Undefined identifier   cobid
+*** "CAN.c" Line 22: Error #12: Undefined identifier   infoShutdownActual
+*** "CAN.c" Line 23: Error #12: Undefined identifier   infoLEDs
+*** "CAN.c" Line 24: Error #51: A numeric expression must appear here
+*** "CAN.c" Line 27: Error #12: Undefined identifier   RXB0CON
+C:\Users\34615\Desktop\Dashboard_2020-2021\scr\CAN.o ===>  11 Errors,  0 Warnings.

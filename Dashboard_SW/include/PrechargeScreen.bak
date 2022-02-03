@@ -1,0 +1,8 @@
+#ifndef PRECHARGESCREEN_H
+#define PRECHARGESCREEN_H
+
+void precharge_information(void);
+void Pantalla_carga_precharge(void);
+void Precharge_inicialization(void);
+
+#endif
