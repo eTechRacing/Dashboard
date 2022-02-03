@@ -1,0 +1,176 @@
+#include <CAN.h>
+
+void send_PrechargeOrder()
+{
+   TXB0SIDH=(unsigned int8)(0x85>>3); //Juntament amb la instruccio seguent definim que el cobid del missatge enviat es 0x85 (85 en hexadecimal)
+   TXB0SIDL=(unsigned int8)(0x85<<5); 
+   TXB0DLC=1; //DLC (numero de bytes del missatge)
+   TXB0D0=PrechargeOrder;//Variable que lleva el mensaje
+   TXB0CON.txreq=1; //Confirmacio recepcio del missatge, (sempre aixi)
+}
+
+void send_Dash_LockOn ()
+{
+   TXB1SIDH=(unsigned int8)(0xA1>>3); //Juntament amb la instrucci? seg?ent definim que el cobid del missatge enviat ?s 0x92 (92 en hexadecimal)
+   TXB1SIDL=(unsigned int8)(0xA1<<5); //El 0x92 ?s el cobid AP_Dash_TorqueLockOn, el qual serveix per deshabilitar l'opci? de posar el cotxe en mode RTD
+   TXB1DLC=1; //DLC (n? de bytes del missatge)
+   TXB1D0=LockOn;
+   TXB1CON.txreq=1; //Confirmaci? recepci? del missatge, (sempre aix?)
+}
+
+void send_enable_Drive()
+{
+   TXB2SIDH=(unsigned int8)(0xA0>>3); //Juntament amb la instrucci? seg?ent definim que el cobid del missatge enviat ?s 0x130 (130 en hexadecimal)
+   TXB2SIDL=(unsigned int8)(0xA0<<5); //El 0x130 ?s el cobid Enable_Drive, el qual serveix per indicar a la ETAS que pot indicar als inversors que poden donar torque
+   TXB2DLC=1; //DLC (numero de bytes del missatge)
+   TXB2D0=EnableDrive; 
+   TXB2CON.txreq=1; //Confirmaci? recepci? del missatge, (sempre aix?)
+}
+
+void send_Dash_Mode ()
+{
+   TXB0SIDH=(unsigned int8)(0xB0>>3); //Juntament amb la instrucci? seg?ent definim que el cobid del missatge enviat ?s 0x131 (131 en hexadecimal)
+   TXB0SIDL=(unsigned int8)(0xB0<<5); //El 0x131 ?s el cobid Dash_Mode, el qual serveix per indicar a la ETAS en quin pilot i competici? ens trobem i que envi? la rmaci?
+   TXB0DLC=1; //DLC (n? de bytes del missatge)
+   switch (competicion_seleccionada)//MANDAMOS A ETAS EN QUE MODO ESTAMOS
+   {
+      case 1: 
+                 TXB0D0=01; //Competici?: WORKSHOP                 
+              break;
+      case 2: if (idCustom==1)
+              {
+                 TXB0D0=11; //Competici?: custom-dash
+              }
+              else if (idCustom==2)
+              {
+                 TXB0D0=12; //Competici?: custom-etas 
+              }
+              break;
+      case 3: if (piloto==1)
+              {
+                 TXB0D0=21; //Competici?: ACCELERATION; Piloto: 1
+              }
+              else if (piloto==2)
+              {
+                 TXB0D0=22; //Competici?: ACCELERATION; Piloto: 2
+              }
+              break;
+      case 4: if (piloto==1)
+              {
+                 TXB0D0=31; //Competici?: SKIDPAD; Piloto: 1
+              }
+              else if (piloto==2)
+              {
+                 TXB0D0=32; //Competici?: SKIDPAD; Piloto: 2
+              }
+              break;
+      case 5: if (piloto==1)
+              {
+                 TXB0D0=41; //Competici?: AUTOCROSS; Piloto: 1
+              }
+              else if (piloto==2)
+              {
+                 TXB0D0=42; //Competici?: AUTOCROSS; Piloto: 2
+              }
+              break;
+      case 6: if (piloto==1)
+              {
+                 TXB0D0=51; //Competici?: ENDURANCE; Piloto: 1
+              }
+              else if (piloto==2)
+              {
+                 TXB0D0=52; //Competici?: ENDURANCE; Piloto: 2
+              }
+              break;
+   }   
+   TXB0CON.txreq=1; //Confirmaci? recepci? del missatge, (sempre aix?)
+}
+
+#int_canrx0 //Iniciamos una interrupción por si CAN nos manda un mensaje de cambio de estado actuar rapido; This interrupt is triggered when a message is received in buffer 0.
+void canrx0_int()
+{
+   cobid=((unsigned int16)RXB0SIDH<<3)|((RXB0SIDL & 0xE0)>>5); //Assignem a la variable cobid l'identificador del missatge
+   lengthCAN=(unsigned int8)RXB0DLC & 0xF;
+   
+   if (cobid==0x80) //Si l'ETAS envia missatge de sincronia amb l'ID 0x80 (AP_ETAS_Synchronism)
+   {  
+      contador_Sincronismo++;
+      if (contador_Sincronismo>=4)//keep alive
+      {
+         contador_Sincronismo=0;
+         Dash_Alive++; //Va sumant 1 cada vegada que envia missatge de Dash_Alive i quan arriba al limit (255) es reinicia sola
+         TXB0SIDH=(unsigned int8)(0xD1>>3); //Juntament amb la instrucci? seg?ent definim que el cobid del missatge enviat ?s 0xD1 (D1 en hexadecimal)
+         TXB0SIDL=(unsigned int8)(0xD1<<5); //El 0xD1 es el cobid de Dash_KeepAlive
+         TXB0DLC=1; //DLC (n? de bytes del missatge)
+         TXB0D0=Dash_Alive;//mensaje que se quiere enviar
+         TXB0CON.txreq=1; //Confirmacio recepcio del missatge, (sempre aixi)
+      }
+      send_Dash_LockOn();//Activamos la funcion para mandar mensaje de Lock On
+      send_Enable_Drive();
+      if(Pantalla_actual==0)
+      {
+         send_PrechargeOrder();//LLamamos a la funcion para mandar mensaje a ETAS de precharge
+      }
+      if(sendDashMode==1)
+      {
+         send_Dash_Mode();
+      }
+      CheckNormativeErrors();
+   } 
+   
+   if(cobid==0x8A)  //Lectura de l'estat actual del cotxe
+   {
+      CarState = RXB0D0;//Igualamos la parte del mensaje donde nos dice que CarState toca (D0)
+   }
+   
+   if(cobid==0xC5) //AP_ETAS_DashData1
+   {
+      PrechargeVoltage=make16(RXB0D0,RXB0D1);//El voltaje viene en el D0 y el D1a
+      PrechargePercentage=RXB0D2;//El porcentaje viene en el D2
+      LVbatteryVoltage=make16(RXB0D3,RXB0D4);//El voltaje de batería viene en el D3 y D4
+      LVbatterySOC=RXB0D5;//El SOC viene en el D5
+      Speed=RXB0D6;//La velocidad viene en el D6
+   }
+   
+   if(cobid==0xC6) //AP_ETAS_DashData2
+   {
+      APPS1value=RXB0D0;
+      APPS2value=RXB0D1;
+      percentatgeBrakeSensor=RXB0D2;//0.4 esta para controlar si encender la luz antes o despues?
+      SteeringSensorValue=RXB0D3;
+      SKF_actual=RXB0D4;
+      CKF_actual=RXB0D5;
+   }
+   
+   if(cobid==0xBA) //ETAS manda los mensajes de Shutdown con el cobid 0xBA
+   {
+      infoShutdownActual=make16(RXB0D0,RXB0D1);
+      infoLEDs=RXB0D2;//Igualamos la parte del mensaje donde nos dice si hay error de IMD o BMS toca (D2)
+      deteccioShutdownError();//LLamamos a la función que enciende los leds y muestra el error en pantalla para que actue 
+   }
+   
+   RXB0CON.RXFUL=0;
+}
+
+void canConfiguration ()
+{
+   disable_interrupts(GLOBAL); //Deshabilitem interrupcions globals
+   can_init(); //Inicialitzem la comunicacio per CAN
+   can_set_mode(CAN_OP_CONFIG); //Posem la comunciacioo per CAN en mode configuracio
+   
+   BRGCON1.brp=1; //Valor de 1 time quanta
+   BRGCON1.sjw=0; //Juntament amb prseg formen el temps de sincorintzacio d'un bit de CAN
+   BRGCON2.prseg=1; //Juntament amb sjw formen el temps de sincronitzacio d'un bit de CAN
+   BRGCON2.seg1ph=4; //Time segment 1
+   BRGCON2.sam=FALSE; //Sempre aixi
+   BRGCON2.seg2phts=TRUE; //Sempre aixi
+   BRGCON3.seg2ph=1; //Time segment 2
+   BRGCON3.wakfil=FALSE; //Sempre aixi
+   CIOCON=0x20; //Sempre aixi
+
+   can_set_mode(CAN_OP_NORMAL); //Tornem la comunciacio per CAN en mode normal
+   enable_interrupts(int_canrx0); //Habilitem la interrupcio de CAN int_canrx0
+   enable_interrupts(GLOBAL); //Habilitem les interrupcions globals
+}
+
+

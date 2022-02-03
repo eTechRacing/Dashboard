@@ -1,0 +1,142 @@
+#ifndef VARIABLES_H
+#define VARIABLES_H
+
+//HARDWARE
+/*char Button_Diagnostics = PIN_B0;*/
+char Button_UP = PIN_B5;
+char Button_DOWN = PIN_A0;
+char Button_RIGHT = PIN_A1;
+char Button_LEFT = PIN_A2;
+char Button_SELECT = PIN_A3;
+char Button_VDC = PIN_B1;
+
+//Indicadors LED externs
+char LED_IMD = PIN_C1;
+char LED_AMS = PIN_C0;
+
+//BUZZER
+char BUZZER = PIN_C6;
+char flag=0;
+
+//7 SEGMENTS
+int cnt=0;
+unsigned int8 decadaSOC=0, valorSOC=0,SEG_A=0,SEG_B=0,SEG_C=0,SEG_D=0;
+
+//BARGRAPH
+unsigned int16 contBargraph=0;//Variable que ensper netejar el bargraphariable que ensper netejar el bargraph
+int16 numBargraphLEDsActual=0; // Variable que indica el número de LEDs del bargraph que s'haurien d'estar encesos
+int16 numBargraphLEDsAnterior=0; // Variable que indica el número de LEDs del bargraph que estàn encendidos en el momento
+
+//CONVERSIONS
+unsigned int32 residu=0; //Variable on guardem el residu per tal de seguir separant el valor
+      //unsigned int8 array[4]; //Matriz para almacenar todos los numeros del valor
+unsigned int8 unitats=0; //Variables en format unsigned int8 que guarden el valor de les unitats, desenes o centenes (x3)
+unsigned int8 desenes=0;
+unsigned int16 centenes=0;
+unsigned int16 milers=0;
+char *number[]={"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}; //Array que cont? una llista amb els numeros del 0 al 9
+unsigned int16 unitatsInt[10]; //Variables en string que guarden el valor de les unitats, desenes o centenes (x3)
+unsigned int16 desenesInt[10];
+unsigned int16 centenesInt[10];
+unsigned int16 milersInt[10];
+
+//CAN
+long cobid, lengthCAN;//para leer el mensaje de can
+char CarState = 0; //iniciar a 0, estado inicial de la pantalla
+char LockOn=0; //iniciar a 0, no mandar torque de inicio
+char PrechargeOrder=0;//Decimos a ETAS que inicie el precharge
+char contador_Sincronismo=0; //Variable utilitzada per fer el contador que incrementa 1 cada vegada que rep el missatge de sincronisme (fins arribar al 4, moment en el que es reiniciar?, s'incrementar? la variable contAlive i s'enviar? el missatge de Dash_Alive)
+char Dash_Alive=0; //Variable para mandar Dash_Alive, la qual incrementa cada 4 missatges de sincronisme
+long infoLEDs=0;//Nos dice cuando encender los leds normativos por algun error
+long infoShutdownActual=0;//nos dice que error de shutdown tenemos
+long PrechargeVoltage=0;
+char PrechargePercentage=0;
+long LVbatteryVoltage=0;
+char LVbatterySOC=0;
+signed int16 Speed=0;
+char EnableDrive=0;
+char sendDashMode=0;          //variable que indica a la funci? send_dash_mode quan ha d'enviar la info de mode+driver pertinents
+unsigned int16 percentatgeBrakeSensor=0; //Variable que cont? el percentatge de Brake Sensor apretat
+char APPS1value=0;
+char APPS2value=0;
+char SteeringSensorValue=0;
+char variable_VDC_seleccionada=1;
+long SKF_initial=0, CKF_initial=0, APPS_Sat_Down=0, APPS_Sat_Up=0, Regenerative_Torque=0, Power_Limit=0, Temperature_Reduction=0, Power_Reduction=0, SKF_actual=0, CKF_actual=0, SKF_cte=0, CKF_cte=0;//VARIABLES DE VDC
+
+//PRECHARGE SCREEN
+unsigned int8 variable_startPrecharge=0; //Variable que habilita la crida a la funciO que mostra el percentatge de precharge fet per pantalla, SOLO SE UNSA EN EL MAIN
+
+//CUSTOM MODE
+char send_Custom_Mode=0;
+char cursorCustom=3;
+
+//ERRORS
+long IMD_Error=1;
+long BMS_Error=1;
+char SetaRightError=0;
+char SetaLeftError=0;
+char InertiaError=0;
+char BOTSerror=0;
+char SetaCockpitErrorActual=0;
+char BMSerrorActual=0;
+char IMDerrorActual=0;
+char BSPDerror=0;
+char HVBoxError=0;
+char HVDintckError=0;
+char InverterLeftIntckError=0;
+char InverterRightIntckError=0;
+char TSMPintckerror=0;
+char TSMSerror=0;
+char PackageInterlockError=0;
+
+//DIAGNOSTIC SCREEN
+/*char variable_button_Diagnostics*/
+
+//DRAW ANIMATION BLINK
+char vegades_toggled=0;
+
+//BUTTONS FUNCTION
+unsigned int8 bothSteeringButtons=0;//Que 2 botones esten pulsados a la vez
+char cursor = 1;     //variable que et permet saber en quin punt de la pantalla et trobes (esquerra(0), centre(1), dreta(2))
+char idCustom = 0;   //id que permet distingir entre Custom Dash i Custom ETAS
+char competicion_seleccionada = 1;     //id pels modes de competici?, cadascun en t? un de diferent inici valor 1
+char piloto = 0;      //id que permet distingir entre piloto 1 y 2
+char refresh_display=1;       //variable que controla l'actualitzaci? de la pantalla
+
+//VDC PARAMETERS
+char Button_VDC_position=0;
+char x3=0;
+char x2=0;
+char x1=0;
+char y=0;
+char c=0;
+char d=0;
+char u=0;
+
+//TIMERS
+char enableSteeringCounter=0;
+char counterBothSteeringButtons=0;
+char contadorTimer=0;
+char prescalerTimer=0;
+char normativeEnable=0; //Variable que actua d'enable per un timer de uns 2.5 segons aprox per coses normatives (IMD i AMS initial indicators i RTDS) 
+char normativeCounter=0; //Contador que actua de prescaler de tot lo normatiu
+char normativeCounter2=0; //Variable que incrementa quan el normativeCounter desbordi
+char toggle_envoltori=0;
+char counter=0;
+
+//DRIVER MENU
+char Pantalla_actual = 0; /*id pels nivells del programa. 
+                          id 0-> waiting for precharge
+                          id 1-> seleccio mode i driver 
+                          id 2-> VDC i custom 
+                          id 3-> race screen (post rtd)*/
+                          
+//RACE SCREEN
+unsigned int8 centenesXparameter=0; //Variable que indica el valor de les centenes d'un cert par?metre X a mostrar
+unsigned int8 desenesXparameter=0; //Variable que indica el valor de les desenes d'un cert par?metre X a mostrar
+unsigned int8 unitatsXparameter=0; //Variable que indica el valor de les unitats d'un cert par?metre X a mostrar
+unsigned int8 residuXparameter=0; //Variable que serveix per calcular les desenes i centenes d'un cert par?metre X
+unsigned int16 barNumber=0; //Variable que indica quantes barres s'han de mostrar
+
+
+#endif

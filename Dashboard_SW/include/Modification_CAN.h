@@ -1,0 +1,11 @@
+#ifndef MODIFICATION_CAN_H
+#define MODIFICATION_CAN_H
+
+#byte RXB0D1=0xF67
+#byte RXB0D2=0xF68
+#byte RXB0D3=0xF69
+#byte RXB0D4=0xF6A
+#byte RXB0D5=0xF6B
+#byte RXB0D6=0xF6C
+
+#endif

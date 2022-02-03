@@ -1,0 +1,8 @@
+#include <pic16c63a.h>
+#ifndef INITIALIZATION_H_
+#define INITIALIZATION_H_
+
+void Dashboard_initialization(void);
+void resetvariables(void);
+
+#endif

@@ -1,0 +1,7 @@
+#ifndef RACESCREEN_H
+#define RACESCREEN_H
+
+void write_VDCparameters(void);
+
+#endif
+

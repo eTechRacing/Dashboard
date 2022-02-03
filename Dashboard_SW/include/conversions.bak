@@ -1,0 +1,6 @@
+#ifndef PRECHARGESCREEN_H
+#define PRECHARGESCREEN_H
+
+void splitUP(unsigned int16 valor);//Separamos el valor en milers centenes decenes i unitats
+
+#endif
