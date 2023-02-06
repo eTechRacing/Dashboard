@@ -22,6 +22,7 @@ void Dashboard_initialization()
    blank_rectangle(1, 1, 128, 64, 0);  //Netegem la pantalla abans d'escriure-hi
    output_high(LED_AMS); //Encenem indicador del BMS durant uns 2.5s (normatiu)
    output_high(LED_IMD); //Encenem indicador del IMD durant uns 2.5s (normatiu)
+   output_low(BUZZER); //Apaguembuzzer (cal probar)(!!!!!!!!!!!!)
    normativeEnable=1;
 }
 
