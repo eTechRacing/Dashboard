@@ -2,18 +2,31 @@
 #include <configuration_PIC.h>   //CONFIGURACION DEL PIC
 #include <font_tahoma.h>         //TIPO DE LETRA
 #include <st7565-config.h>       //
+output_low(BUZZER); //Apaguem buzzer (cal comprobar)(!!!!!!!!!!!!)
 #include <st7565.c>              //
+output_low(BUZZER); //Apaguem buzzer (cal comprobar)(!!!!!!!!!!!!)
 #include <my_graphics.c>         //
+output_low(BUZZER); //Apaguem buzzer (cal comprobar)(!!!!!!!!!!!!)
 #include <variables.h>           //DEFINIDAS TODAS LAS VARIABLES
+output_low(BUZZER); //Apaguem buzzer (cal comprobar)(!!!!!!!!!!!!)
 #include <7segments.c>
+output_low(BUZZER); //Apaguem buzzer (cal comprobar)(!!!!!!!!!!!!)
 #include <bargraph.c>
+output_low(BUZZER); //Apaguem buzzer (cal comprobar)(!!!!!!!!!!!!)
 #include <conversions.c>         //
+output_low(BUZZER); //Apaguem buzzer (cal comprobar)(!!!!!!!!!!!!)
 #include <modification_CAN.h> //No se debe modificar una libreria directamente por eso creo esto para poner las modificaciones
+output_low(BUZZER); //Apaguem buzzer (cal comprobar)(!!!!!!!!!!!!)
 #include <Errors.c>              //LECTURA DE ERRORES QUE MANDA LA ETAS
+output_low(BUZZER); //Apaguem buzzer (cal comprobar)(!!!!!!!!!!!!)
 #include <CAN.c>                 //COMUNICACION CON CAN
+output_low(BUZZER); //Apaguem buzzer (cal comprobar)(!!!!!!!!!!!!)
 #include <templates.c>           //DIBUJOS DE LA PANTALLA
+output_low(BUZZER); //Apaguem buzzer (cal comprobar)(!!!!!!!!!!!!)
 #include <driving_menu.c>        //PARA SABER SI ESTAMOS EN LA IZQUIERDA O EN LA DERECHA DEL MENU
+output_low(BUZZER); //Apaguem buzzer (cal comprobar)(!!!!!!!!!!!!)
 #include <Buttons_function.c>    //FUNCION DE LOS BOTONES
+output_low(BUZZER); //Apaguem buzzer (cal comprobar)(!!!!!!!!!!!!)
 #include <initialization.c>      //INICIALIZACION DE VARIABLES
 #include <PrechargeScreen.c>     //FUNCIONES RELACIONADAS CON PRECHARGE
 #include <draw_animation_blink.c>//PARPADEO PARA SABER DONDE ESTAMOS EN EL MENU
@@ -80,7 +93,7 @@ main()
             } 
       }
       
-      if(Pantalla_actual==3 && (CarState==15 || CarState == 18))
+      if(Pantalla_actual==3 && CarState==15)
       {
          LockOn= 0;
          if (flag==0)

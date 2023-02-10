@@ -1,6 +1,6 @@
 
-ROM used: 32172 (33%)
-          32172 (33%) including unused fragments
+ROM used: 32240 (33%)
+          32240 (33%) including unused fragments
 
           3 Average locations per line
           17 Average locations per statement
@@ -13,51 +13,51 @@ Stack used: 9 worst case (out of 31 total available)
 Lines Stmts  %   Files
 ----- ----- ---  -----
   114    64   3  Project_Dashboard_2020-2021.c
-   33     0   0  include\configuration_PIC.h
-  461     0   0  E:\PROGRAMAS\CCS COMPILER\PICC\Devices\18F4685.h
- 3659     0   0  include\font_tahoma.h
-   25     0   0  include\st7565-config.h
-  283   120   6  scr\st7565.c
-  208     0   0  include\st7565.h
-  285   139   7  scr\my_graphics.c
- 1273   359  19  E:\PROGRAMAS\CCS COMPILER\PICC\Drivers\stdlib.h
-   28     0   0  E:\PROGRAMAS\CCS COMPILER\PICC\Drivers\stddef.h
-  409   121   6  E:\PROGRAMAS\CCS COMPILER\PICC\Drivers\string.h
-   28     0   0  E:\PROGRAMAS\CCS COMPILER\PICC\Drivers\ctype.h
-  159     0   0  include\my_graphics.h
-  143     0   0  include\variables.h
-  101    83   4  scr\7segments.c
-    8     0   0  include\7segments.h
-  105    62   3  scr\bargraph.c
-   10     0   0  include\bargraph.h
-   43    22   1  scr\conversions.c
-    8     0   0  include\conversions.h
-   12     0   0  include\modification_CAN.h
-  139    95   5  scr\Errors.c
-   10     0   0  include\Errors.h
-  177   119   6  scr\CAN.c
-   13     0   0  include\CAN.h
-  443   137   7  E:\PROGRAMAS\CCS COMPILER\PICC\Drivers\can-18xxx8.C
-  378     0   0  E:\PROGRAMAS\CCS COMPILER\PICC\Drivers\can-18xxx8.h
-  112    82   4  scr\templates.c
-    7     0   0  include\templates.h
-   30    16   1  scr\driving_menu.c
-    7     0   0  include\driving_menu.h
-  143    91   5  scr\Buttons_function.c
-    8     0   0  include\Buttons_function.h
-   47    30   2  scr\initialization.c
-    8     0   0  include\initialization.h
-   51    25   1  scr\PrechargeScreen.c
-    9     0   0  include\PrechargeScreen.h
-   66    45   2  scr\draw_animation_blink.c
-    8     0   0  include\draw_animation_blink.h
-   52    34   2  scr\Timers.c
-  295   243  13  scr\racescreen.c
-   14     0   0  include\racescreen.h
-   39    20   1  scr\Logo.c
-    7     0   0  include\Logo.h
+   33     0   0  inc\configuration_PIC.h
+  461     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4685.h
+ 3659     0   0  inc\font_tahoma.h
+   25     0   0  inc\st7565-config.h
+  283   120   6  src\st7565.c
+  208     0   0  inc\st7565.h
+  285   139   7  src\my_graphics.c
+ 1273   359  19  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\stdlib.h
+   28     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\stddef.h
+  409   121   6  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\string.h
+   28     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\ctype.h
+  159     0   0  inc\my_graphics.h
+  144     0   0  inc\variables.h
+  101    83   4  src\7segments.c
+    8     0   0  inc\7segments.h
+  105    62   3  src\bargraph.c
+   10     0   0  inc\bargraph.h
+   43    22   1  src\conversions.c
+    8     0   0  inc\conversions.h
+   12     0   0  inc\modification_CAN.h
+  139    95   5  src\Errors.c
+   10     0   0  inc\Errors.h
+  177   119   6  src\CAN.c
+   13     0   0  inc\CAN.h
+  443   137   7  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\can-18xxx8.C
+  378     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\can-18xxx8.h
+  112    82   4  src\templates.c
+    7     0   0  inc\templates.h
+   30    16   1  src\driving_menu.c
+    7     0   0  inc\driving_menu.h
+  143    91   5  src\Buttons_function.c
+   10     0   0  inc\Buttons_function.h
+   48    31   2  src\initialization.c
+    8     0   0  inc\initialization.h
+   51    25   1  src\PrechargeScreen.c
+    9     0   0  inc\PrechargeScreen.h
+   66    45   2  src\draw_animation_blink.c
+    8     0   0  inc\draw_animation_blink.h
+   52    34   2  src\Timers.c
+  295   243  13  src\racescreen.c
+   14     0   0  inc\racescreen.h
+   39    20   1  src\Logo.c
+    7     0   0  inc\Logo.h
 ----- -----
- 9458  1907 Total
+ 9462  1908 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
@@ -81,7 +81,7 @@ Page ROM  %  RAM   Vol Diff  Functions:
 0   2982   5   1  2350  8.3  visualitzar7seg
 0     44   0   3             @DIV88
 0     66   0   6             @WRITEBITA
-0     62   0   0             @goto11684
+0     62   0   0             @goto11686
 0     44   0   0   138  3.0  bargraph_init
 0     30   0   0    72  1.2  flancoCLK
 0    230   0   1   845  3.4  selectNumberLEDs
@@ -90,21 +90,21 @@ Page ROM  %  RAM   Vol Diff  Functions:
 0    128   0  13             @DIV3232
 0    434   1  23   830  3.7  writeParameter
 0     34   0   1             @SPRINTF
-0     36   0   2             @PSTRINGR_617
+0     36   0   2             @PSTRINGR_619
 0    112   0   0   190  1.8  popUpWindow
 0   1782   3   4  3893  3.5  writeError
-0     42   0   0             @const633
-0     40   0   0             @const635
-0     38   0   0             @const637
-0     44   0   0             @const641
-0     38   0   0             @const649
-0     44   0   0             @const651
-0     54   0   0             @const653
-0     56   0   0             @const655
-0     46   0   0             @const657
-0     48   0   0             @const661
-0     46   0   0             @const663
+0     42   0   0             @const635
+0     40   0   0             @const637
+0     38   0   0             @const639
+0     44   0   0             @const643
+0     38   0   0             @const651
+0     44   0   0             @const653
+0     54   0   0             @const655
+0     56   0   0             @const657
+0     46   0   0             @const659
+0     48   0   0             @const663
 0     46   0   0             @const665
+0     46   0   0             @const667
 0    502   1   2   965  2.9  deteccioShutdownError
 0    196   0   0   178  1.1  checkNormativeErrors
 0    244   0   1   822  4.4  can_init
@@ -115,59 +115,59 @@ Page ROM  %  RAM   Vol Diff  Functions:
 0     26   0   0   165  3.5  send_Dash_LockOn
 0     24   0   0   165  3.5  send_enable_Drive
 0    208   0   0  1100  7.0  send_Dash_Mode
-0     44   0   0             @goto12233
+0     44   0   0             @goto12235
 0    280   0   3  1427  7.2  canrx0_int
 0     86   0   0   423  2.3  canConfiguration
 0   3608   6   4  8211  4.0  scrollDrawing
-0     40   0   0             @const911
-0     40   0   0             @const912
-0     38   0   0             @const913
-0     44   0   0             @const924
-0     38   0   0             @const929
-0     40   0   0             @const934
-0     54   0   0             @goto12399
+0     40   0   0             @const913
+0     40   0   0             @const914
+0     38   0   0             @const915
+0     44   0   0             @const926
+0     38   0   0             @const931
+0     40   0   0             @const936
+0     54   0   0             @goto12401
 0     60   0   0   272  3.5  left_or_right
 0    254   0   0   141  3.0  SteeringButtons
 0     50   0   5             @READBITA
 0   1086   2   0  2137  7.8  ScrollDrivingModes
-0    244   0   0   402  2.4  Dashboard_initialization
+0    312   0   0   429  2.4  Dashboard_initialization
 0     52   0   0   282  1.8  resetvariables
 0    342   1   4   428  1.9  precharge_message
-0     50   0   0             @const955
-0     54   0   0             @const957
-0     52   0   0             @const958
+0     50   0   0             @const957
+0     54   0   0             @const959
+0     52   0   0             @const960
 0    386   1   4   522  5.1  Pantalla_carga_precharge
-0     56   0   0             @const960
-0     58   0   0             @const962
-0     60   0   0             @const963
+0     56   0   0             @const962
+0     58   0   0             @const964
+0     60   0   0             @const965
 0    134   0   1   236  2.2  Precharge_information
 0    926   1   0  2703  6.4  blink_draws
 0    204   0   0   671  4.2  TIMER_isr
 0    302   0   4   349  1.8  write_VDCparameters
-0     42   0   0             @const983
 0     42   0   0             @const985
+0     42   0   0             @const987
 0     94   0   4   121  1.6  write_raceScreen
 0    448   1   6   963  4.0  drawXparameter
 0     36   0   5             @MUL1616
 0    448   1   1  1204  2.9  drawBars
 0    156   0   2   292  3.3  writeXparameterValue
 0   1830   3   1  5378  4.0  writeCentenes
-0     62   0   0             @goto12825
+0     62   0   0             @goto12827
 0   1808   3   1  5378  4.0  writeDesenes
-0     62   0   0             @goto12844
+0     62   0   0             @goto12846
 0   1830   3   1  5381  4.0  writeUnitats
-0     62   0   0             @goto12863
+0     62   0   0             @goto12865
 0    652   1   0  1625  1.9  Logo_ETR
 0   4818   7   1  1645  5.9  MAIN
 
 Program metrics:
     Functions               56
-    Statements              1907
-    Comments                3948
-    Volume (V)              106179
+    Statements              1908
+    Comments                3950
+    Volume (V)              106233
     Difficilty (D)          238.7
-    Effort to implement (E) 25339956
-    Time to implement (T)   391 hours, 3 minutes
+    Effort to implement (E) 25353257
+    Time to implement (T)   391 hours, 15 minutes
     Est Delivered Bugs (B)  29
     Cyclomatic Complexity   204
     Maintainability (MI)    95
@@ -177,7 +177,7 @@ Program metrics:
 00000-00002     4  0  
 00004-00006     0  4  
 00008-000A8   162  0  
-000AA-0FFFE  32006  33360  
+000AA-0FFFE  32074  33292  
 10000-17FFE     0  32768  
 
 

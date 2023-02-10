@@ -1,5 +1,5 @@
 [Directories]
-Include=E:\PROGRAMAS\CCS COMPILER\PICC\Devices;E:\PROGRAMAS\CCS COMPILER\PICC\Drivers;C:\Users\34615\Documents\GitHub\etechracing\Dashboard\Software\2020-2021\CarState_0_21_3_6_9_12(1)_15-2.1\include;C:\Users\34615\Documents\GitHub\etechracing\Dashboard\Software\2020-2021\CarState_0_21_3_6_9_12(1)_15-2.1\scr;
+Include=C:\Users\amrib\Desktop\E_Tech_Racing\GitBash_etech\Dashboard\Dashboard\Dashboard_SW\inc;C:\Users\amrib\Desktop\E_Tech_Racing\GitBash_etech\Dashboard\Dashboard\Dashboard_SW\src;C:\Program Files (x86)\PICC\Devices;C:\Program Files (x86)\PICC\Drivers;
 Library=
 LinkerScript=
 [defines]

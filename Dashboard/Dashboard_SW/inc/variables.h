@@ -16,6 +16,7 @@ char LED_AMS = PIN_C0;
 
 //BUZZER
 char BUZZER = PIN_C6;
+output_low(BUZZER); //Apaguem buzzer (cal comprobar)(!!!!!!!!!!!!)
 char flag=0;
 
 //7 SEGMENTS
