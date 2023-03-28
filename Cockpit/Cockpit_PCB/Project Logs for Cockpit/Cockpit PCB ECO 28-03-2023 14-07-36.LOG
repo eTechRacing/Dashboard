@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=IMD_LED+ Pin=J1-7
+Removed Pin From Net: NetName=IMD_LED- Pin=J1-8
+Added Pin To Net: NetName=IMD_LED- Pin=J1-13
+Added Pin To Net: NetName=IMD_LED+ Pin=J1-14
+Added Member To Class: ClassName=Cockpit Member=Component Q2 CPH3455-TL-H
+Added Member To Class: ClassName=Cockpit Member=Component R3 CR0805-FX-4700GLF
+Added Member To Class: ClassName=Cockpit Member=Component R6 CR0805-JW-102ELF

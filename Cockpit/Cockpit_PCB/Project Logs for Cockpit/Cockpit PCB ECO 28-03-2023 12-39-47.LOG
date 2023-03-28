@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=LV+_in Pin=TP1-1
+Removed Pin From Net: NetName=NetC1_2 Pin=TP2-1
+Removed Pin From Net: NetName=+12 Pin=TP3-1
+Removed Pin From Net: NetName=NetC2_2 Pin=TP5-1
+Removed Pin From Net: NetName=GND Pin=TP6-1
+Removed Member From Class: ClassName=Cockpit Member=TP1
+Removed Member From Class: ClassName=Cockpit Member=TP2
+Removed Member From Class: ClassName=Cockpit Member=TP3
+Removed Member From Class: ClassName=Cockpit Member=TP5
+Removed Member From Class: ClassName=Cockpit Member=TP6
