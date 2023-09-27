@@ -2,6 +2,7 @@
 
 void Dashboard_initialization()
 {
+   output_low(BUZZER); //Apaguem buzzer (cal comprobar)(!!!!!!!!!!!!)
    canConfiguration();
    segments_init();
    bargraph_init();
