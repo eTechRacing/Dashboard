@@ -1,0 +1,100 @@
+Change Component Designator: OldDesignator=D* NewDesignator=D201
+Change Component Designator: OldDesignator=D* NewDesignator=D202
+Change Component Designator: OldDesignator=D* NewDesignator=D203
+Change Component Designator: OldDesignator=D* NewDesignator=D204
+Change Component Designator: OldDesignator=D* NewDesignator=D205
+Change Component Designator: OldDesignator=D* NewDesignator=D206
+Change Component Designator: OldDesignator=D* NewDesignator=D207
+Change Component Designator: OldDesignator=D* NewDesignator=D208
+Change Component Designator: OldDesignator=D* NewDesignator=D209
+Change Component Designator: OldDesignator=Q* NewDesignator=Q203
+Change Component Designator: OldDesignator=Q* NewDesignator=Q204
+Change Component Designator: OldDesignator=Q* NewDesignator=Q205
+Change Component Designator: OldDesignator=Q* NewDesignator=Q206
+Change Component Designator: OldDesignator=Q* NewDesignator=Q207
+Change Component Designator: OldDesignator=Q* NewDesignator=Q208
+Change Component Designator: OldDesignator=Q* NewDesignator=Q209
+Change Component Designator: OldDesignator=Q*? NewDesignator=Q201
+Change Component Designator: OldDesignator=Q*? NewDesignator=Q202
+Change Component Designator: OldDesignator=R* NewDesignator=R210
+Change Component Designator: OldDesignator=R* NewDesignator=R211
+Change Component Designator: OldDesignator=R* NewDesignator=R212
+Change Component Designator: OldDesignator=R* NewDesignator=R213
+Change Component Designator: OldDesignator=R* NewDesignator=R214
+Change Component Designator: OldDesignator=R* NewDesignator=R215
+Change Component Designator: OldDesignator=R* NewDesignator=R216
+Change Component Designator: OldDesignator=R* NewDesignator=R217
+Change Component Designator: OldDesignator=R* NewDesignator=R218
+Add Pin To Net: Unknown Pin: Pin D201-A
+Add Pin To Net: Unknown Pin: Pin D202-A
+Add Pin To Net: Unknown Pin: Pin D203-A
+Add Pin To Net: Unknown Pin: Pin D204-A
+Add Pin To Net: Unknown Pin: Pin D205-A
+Add Pin To Net: Unknown Pin: Pin D206-A
+Add Pin To Net: Unknown Pin: Pin D207-A
+Add Pin To Net: Unknown Pin: Pin D208-A
+Add Pin To Net: Unknown Pin: Pin D209-A
+Change Net Name : Old Net Name=NetQ*?_D New Net Name=NetQ202_D
+Change Net Name : Old Net Name=NetQ*_D New Net Name=NetQ208_D
+Added Pin To Net: NetName=NetD201_K Pin=R201-2
+Added Net: Name=NetD201_K
+Added Pin To Net: NetName=NetD202_K Pin=R202-2
+Added Net: Name=NetD202_K
+Added Pin To Net: NetName=NetD203_K Pin=R203-2
+Added Net: Name=NetD203_K
+Added Pin To Net: NetName=NetD204_K Pin=R204-2
+Added Net: Name=NetD204_K
+Added Pin To Net: NetName=NetD205_K Pin=R205-2
+Added Net: Name=NetD205_K
+Added Pin To Net: NetName=NetD206_K Pin=R206-2
+Added Net: Name=NetD206_K
+Added Pin To Net: NetName=NetD207_K Pin=R207-2
+Added Net: Name=NetD207_K
+Added Pin To Net: NetName=NetD208_K Pin=R208-2
+Added Net: Name=NetD208_K
+Added Pin To Net: NetName=NetD209_K Pin=R209-2
+Added Net: Name=NetD209_K
+Added Pin To Net: NetName=NetQ201_D Pin=Q201-D
+Added Pin To Net: NetName=NetQ201_D Pin=R201-1
+Added Net: Name=NetQ201_D
+Added Pin To Net: NetName=NetQ203_D Pin=Q203-D
+Added Pin To Net: NetName=NetQ203_D Pin=R203-1
+Added Net: Name=NetQ203_D
+Added Pin To Net: NetName=NetQ204_D Pin=Q204-D
+Added Pin To Net: NetName=NetQ204_D Pin=R204-1
+Added Net: Name=NetQ204_D
+Added Pin To Net: NetName=NetQ205_D Pin=Q205-D
+Added Pin To Net: NetName=NetQ205_D Pin=R205-1
+Added Net: Name=NetQ205_D
+Added Pin To Net: NetName=NetQ206_D Pin=Q206-D
+Added Pin To Net: NetName=NetQ206_D Pin=R206-1
+Added Net: Name=NetQ206_D
+Added Pin To Net: NetName=NetQ207_D Pin=Q207-D
+Added Pin To Net: NetName=NetQ207_D Pin=R207-1
+Added Net: Name=NetQ207_D
+Added Pin To Net: NetName=NetQ209_D Pin=Q209-D
+Added Pin To Net: NetName=NetQ209_D Pin=R209-1
+Added Net: Name=NetQ209_D
+Added Member To Class: ClassName=Bargraph Member=Component D201 150080GS75000
+Added Member To Class: ClassName=Bargraph Member=Component D202 150080GS75000
+Added Member To Class: ClassName=Bargraph Member=Component D203 150080GS75000
+Added Member To Class: ClassName=Bargraph Member=Component D204 150080YS75000
+Added Member To Class: ClassName=Bargraph Member=Component D205 150080YS75000
+Added Member To Class: ClassName=Bargraph Member=Component D206 150080YS75000
+Added Member To Class: ClassName=Bargraph Member=Component D207 150080RS75000
+Added Member To Class: ClassName=Bargraph Member=Component D209 150080RS75000
+Added Member To Class: ClassName=Bargraph Member=Component Q201 CPH3455-TL-H
+Added Member To Class: ClassName=Bargraph Member=Component Q203 CPH3455-TL-H
+Added Member To Class: ClassName=Bargraph Member=Component Q204 CPH3455-TL-H
+Added Member To Class: ClassName=Bargraph Member=Component Q205 CPH3455-TL-H
+Added Member To Class: ClassName=Bargraph Member=Component Q206 CPH3455-TL-H
+Added Member To Class: ClassName=Bargraph Member=Component Q207 CPH3455-TL-H
+Added Member To Class: ClassName=Bargraph Member=Component Q208 CPH3455-TL-H
+Added Member To Class: ClassName=Bargraph Member=Component R210 CR0805-JW-103ELF
+Added Member To Class: ClassName=Bargraph Member=Component R211 CR0805-JW-103ELF
+Added Member To Class: ClassName=Bargraph Member=Component R212 CR0805-JW-103ELF
+Added Member To Class: ClassName=Bargraph Member=Component R213 CR0805-JW-103ELF
+Added Member To Class: ClassName=Bargraph Member=Component R214 CR0805-JW-103ELF
+Added Member To Class: ClassName=Bargraph Member=Component R215 CR0805-JW-103ELF
+Added Member To Class: ClassName=Bargraph Member=Component R216 CR0805-JW-103ELF
+Added Member To Class: ClassName=Bargraph Member=Component R217 CR0805-JW-103ELF
