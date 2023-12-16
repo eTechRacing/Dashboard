@@ -1,0 +1,12 @@
+Added Component: Designator=MH1(Mounting_Hole_M3)
+Added Component: Designator=MH2(Mounting_Hole_M3)
+Added Component: Designator=MH3(Mounting_Hole_M3)
+Added Component: Designator=MH4(Mounting_Hole_M3)
+Added Pin To Net: NetName=GND Pin=MH1-1
+Added Pin To Net: NetName=GND Pin=MH2-1
+Added Pin To Net: NetName=GND Pin=MH3-1
+Added Pin To Net: NetName=GND Pin=MH4-1
+Added Member To Class: ClassName=MASTER_HW Member=Component MH1 Mounting_Hole_M3
+Added Member To Class: ClassName=MASTER_HW Member=Component MH2 Mounting_Hole_M3
+Added Member To Class: ClassName=MASTER_HW Member=Component MH3 Mounting_Hole_M3
+Added Member To Class: ClassName=MASTER_HW Member=Component MH4 Mounting_Hole_M3

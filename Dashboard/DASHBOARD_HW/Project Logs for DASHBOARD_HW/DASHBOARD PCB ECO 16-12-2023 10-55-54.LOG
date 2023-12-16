@@ -1,0 +1,178 @@
+Added Component: Designator=J1(62332821021)
+Add component (AddParameter): Name = "Category"; Value = "Board-to-Board Connectors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Website Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.we-online.com/redexpert/article/62332821021?ad"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.we-online.com/redexpert/spec/62332821021?ad"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Resistance"; Value = "20mO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Gender"; Value = "Socket Header"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Wurth Elektronik"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "62332821021"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Match Code"; Value = "WR-PHD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Pins"; Value = "28"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Rows"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature Max"; Value = "105°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature Min"; Value = "-40°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Orientation"; Value = "Vertical"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "1.27mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rated Current"; Value = "1A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Withstanding Voltage"; Value = "500V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Working Voltage"; Value = "250V"; VariantName = "[No Variations]"
+Added Component: Designator=J2(62332821021)
+Add component (AddParameter): Name = "Category"; Value = "Board-to-Board Connectors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Website Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.we-online.com/redexpert/article/62332821021?ad"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.we-online.com/redexpert/spec/62332821021?ad"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Resistance"; Value = "20mO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Gender"; Value = "Socket Header"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Wurth Elektronik"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "62332821021"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Match Code"; Value = "WR-PHD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Pins"; Value = "28"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Rows"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature Max"; Value = "105°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature Min"; Value = "-40°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Orientation"; Value = "Vertical"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "1.27mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rated Current"; Value = "1A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Withstanding Voltage"; Value = "500V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Working Voltage"; Value = "250V"; VariantName = "[No Variations]"
+Added Component: Designator=J3(62332821021)
+Add component (AddParameter): Name = "Category"; Value = "Board-to-Board Connectors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Website Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.we-online.com/redexpert/article/62332821021?ad"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.we-online.com/redexpert/spec/62332821021?ad"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Resistance"; Value = "20mO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Gender"; Value = "Socket Header"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Wurth Elektronik"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "62332821021"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Match Code"; Value = "WR-PHD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Pins"; Value = "28"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Rows"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature Max"; Value = "105°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature Min"; Value = "-40°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Orientation"; Value = "Vertical"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "1.27mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rated Current"; Value = "1A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Withstanding Voltage"; Value = "500V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Working Voltage"; Value = "250V"; VariantName = "[No Variations]"
+Added Component: Designator=J4(62332821021)
+Add component (AddParameter): Name = "Category"; Value = "Board-to-Board Connectors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Website Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.we-online.com/redexpert/article/62332821021?ad"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.we-online.com/redexpert/spec/62332821021?ad"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Resistance"; Value = "20mO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Gender"; Value = "Socket Header"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Wurth Elektronik"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "62332821021"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Match Code"; Value = "WR-PHD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Pins"; Value = "28"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Rows"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature Max"; Value = "105°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature Min"; Value = "-40°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Orientation"; Value = "Vertical"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "1.27mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rated Current"; Value = "1A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Withstanding Voltage"; Value = "500V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Working Voltage"; Value = "250V"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=PA7 Pin=J1-1
+Added Pin To Net: NetName=PA5 Pin=J1-2
+Added Pin To Net: NetName=PA6 Pin=J1-3
+Added Pin To Net: NetName=PA4 Pin=J1-4
+Added Pin To Net: NetName=VDDA Pin=J1-5
+Added Pin To Net: NetName=PA3 Pin=J1-6
+Added Pin To Net: NetName=VREFA Pin=J1-7
+Added Pin To Net: NetName=PA2 Pin=J1-8
+Added Pin To Net: NetName=VSSA Pin=J1-9
+Added Pin To Net: NetName=PA1 Pin=J1-10
+Added Pin To Net: NetName=PA0 Pin=J1-12
+Added Pin To Net: NetName=PC3 Pin=J1-14
+Added Pin To Net: NetName=PC2 Pin=J1-16
+Added Pin To Net: NetName=PC1 Pin=J1-18
+Added Pin To Net: NetName=PC0 Pin=J1-20
+Added Pin To Net: NetName=PC15 Pin=J1-22
+Added Pin To Net: NetName=PC14 Pin=J1-24
+Added Pin To Net: NetName=PC13 Pin=J1-26
+Added Pin To Net: NetName=PE2 Pin=J1-28
+Added Pin To Net: NetName=PB0 Pin=J2-1
+Added Pin To Net: NetName=+3.3 Pin=J2-2
+Added Pin To Net: NetName=PB1 Pin=J2-3
+Added Pin To Net: NetName=PB2 Pin=J2-5
+Added Pin To Net: NetName=PE7 Pin=J2-7
+Added Pin To Net: NetName=PE8 Pin=J2-9
+Added Pin To Net: NetName=PE9 Pin=J2-11
+Added Pin To Net: NetName=PE10 Pin=J2-13
+Added Pin To Net: NetName=PE11 Pin=J2-15
+Added Pin To Net: NetName=PC4 Pin=J2-16
+Added Pin To Net: NetName=PE12 Pin=J2-17
+Added Pin To Net: NetName=PC5 Pin=J2-18
+Added Pin To Net: NetName=PE13 Pin=J2-19
+Added Pin To Net: NetName=PE14 Pin=J2-21
+Added Pin To Net: NetName=PE15 Pin=J2-23
+Added Pin To Net: NetName=PB10 Pin=J2-25
+Added Pin To Net: NetName=PB11 Pin=J2-27
+Added Pin To Net: NetName=GND Pin=J2-28
+Added Pin To Net: NetName=+3.3 Pin=J3-1
+Added Pin To Net: NetName=PA10 Pin=J3-2
+Added Pin To Net: NetName=+24 Pin=J3-3
+Added Pin To Net: NetName=PA8 Pin=J3-4
+Added Pin To Net: NetName=+24 Pin=J3-5
+Added Pin To Net: NetName=PC9 Pin=J3-6
+Added Pin To Net: NetName=+24 Pin=J3-7
+Added Pin To Net: NetName=PC8 Pin=J3-8
+Added Pin To Net: NetName=+24 Pin=J3-9
+Added Pin To Net: NetName=PC7 Pin=J3-10
+Added Pin To Net: NetName=+24 Pin=J3-11
+Added Pin To Net: NetName=PC6 Pin=J3-12
+Added Pin To Net: NetName=PD15 Pin=J3-14
+Added Pin To Net: NetName=PD14 Pin=J3-16
+Added Pin To Net: NetName=PD11 Pin=J3-18
+Added Pin To Net: NetName=PD10 Pin=J3-20
+Added Pin To Net: NetName=PD9 Pin=J3-22
+Added Pin To Net: NetName=GND Pin=J3-23
+Added Pin To Net: NetName=PD8 Pin=J3-24
+Added Pin To Net: NetName=PB15 Pin=J3-26
+Added Pin To Net: NetName=PB14 Pin=J3-28
+Added Pin To Net: NetName=+3.3 Pin=J4-1
+Added Pin To Net: NetName=PE3 Pin=J4-2
+Added Pin To Net: NetName=+24 Pin=J4-3
+Added Pin To Net: NetName=PE1 Pin=J4-4
+Added Pin To Net: NetName=+24 Pin=J4-5
+Added Pin To Net: NetName=PE0 Pin=J4-6
+Added Pin To Net: NetName=+24 Pin=J4-7
+Added Pin To Net: NetName=PB9 Pin=J4-8
+Added Pin To Net: NetName=+24 Pin=J4-9
+Added Pin To Net: NetName=PB8 Pin=J4-10
+Added Pin To Net: NetName=PD7 Pin=J4-11
+Added Pin To Net: NetName=PB7 Pin=J4-12
+Added Pin To Net: NetName=PD6 Pin=J4-13
+Added Pin To Net: NetName=PB6 Pin=J4-14
+Added Pin To Net: NetName=PD5 Pin=J4-15
+Added Pin To Net: NetName=PB5 Pin=J4-16
+Added Pin To Net: NetName=PD4 Pin=J4-17
+Added Pin To Net: NetName=PB4 Pin=J4-18
+Added Pin To Net: NetName=PD3 Pin=J4-19
+Added Pin To Net: NetName=PB3 Pin=J4-20
+Added Pin To Net: NetName=PD2 Pin=J4-21
+Added Pin To Net: NetName=PC12 Pin=J4-22
+Added Pin To Net: NetName=+5 Pin=J4-23
+Added Pin To Net: NetName=PC11 Pin=J4-24
+Added Pin To Net: NetName=+5 Pin=J4-25
+Added Pin To Net: NetName=PC10 Pin=J4-26
+Added Pin To Net: NetName=+5 Pin=J4-27
+Added Pin To Net: NetName=PA15 Pin=J4-28
+Added Member To Class: ClassName=MASTER_HW Member=Component J1 62332821021
+Added Member To Class: ClassName=MASTER_HW Member=Component J2 62332821021
+Added Member To Class: ClassName=MASTER_HW Member=Component J3 62332821021
+Added Member To Class: ClassName=MASTER_HW Member=Component J4 62332821021

@@ -1,0 +1,30 @@
+Added Component: Designator=SW401(SWITCH/NO)
+Added Component: Designator=SW402(SWITCH/NO)
+Added Component: Designator=SW403(SWITCH/NO)
+Added Component: Designator=SW404(SWITCH/NO)
+Added Component: Designator=SW405(SWITCH/NO)
+Added Pin To Net: NetName=UP_BUTTON Pin=SW401-1
+Added Pin To Net: NetName=UP_BUTTON Pin=SW401-2
+Added Pin To Net: NetName=+3.3 Pin=SW401-3
+Added Pin To Net: NetName=+3.3 Pin=SW401-4
+Added Pin To Net: NetName=DOWN_BUTTON Pin=SW402-1
+Added Pin To Net: NetName=DOWN_BUTTON Pin=SW402-2
+Added Pin To Net: NetName=+3.3 Pin=SW402-3
+Added Pin To Net: NetName=+3.3 Pin=SW402-4
+Added Pin To Net: NetName=RIGHT_BUTTON Pin=SW403-1
+Added Pin To Net: NetName=RIGHT_BUTTON Pin=SW403-2
+Added Pin To Net: NetName=+3.3 Pin=SW403-3
+Added Pin To Net: NetName=+3.3 Pin=SW403-4
+Added Pin To Net: NetName=LEFT_BUTTON Pin=SW404-1
+Added Pin To Net: NetName=LEFT_BUTTON Pin=SW404-2
+Added Pin To Net: NetName=+3.3 Pin=SW404-3
+Added Pin To Net: NetName=+3.3 Pin=SW404-4
+Added Pin To Net: NetName=OK_BUTTON Pin=SW405-1
+Added Pin To Net: NetName=OK_BUTTON Pin=SW405-2
+Added Pin To Net: NetName=+3.3 Pin=SW405-3
+Added Pin To Net: NetName=+3.3 Pin=SW405-4
+Added Member To Class: ClassName=Buttons Member=Component SW401 11.521
+Added Member To Class: ClassName=Buttons Member=Component SW402 11.521
+Added Member To Class: ClassName=Buttons Member=Component SW403 11.521
+Added Member To Class: ClassName=Buttons Member=Component SW404 11.521
+Added Member To Class: ClassName=Buttons Member=Component SW405 11.521
