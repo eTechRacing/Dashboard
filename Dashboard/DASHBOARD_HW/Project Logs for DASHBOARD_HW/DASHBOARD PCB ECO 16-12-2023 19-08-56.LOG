@@ -1,0 +1,45 @@
+Added Pin To Net: NetName=IMD_LED Pin=J1-1
+Added Pin To Net: NetName=AMS_LED Pin=J1-3
+Added Pin To Net: NetName=SC_END_LED Pin=J3-2
+Added Pin To Net: NetName=UP_BUTTON Pin=J3-20
+Added Pin To Net: NetName=LEFT_BUTTON Pin=J3-22
+Added Pin To Net: NetName=OK_BUTTON Pin=J3-24
+Added Pin To Net: NetName=DOWN_BUTTON Pin=J3-26
+Added Pin To Net: NetName=RIGHT_BUTTON Pin=J3-28
+Change Net Name : Old Net Name=NetQ405_G New Net Name=BUZZER_CONTROL
+Added Pin To Net: NetName=LED_GREEN_1 Pin=J2-5
+Added Pin To Net: NetName=LED_GREEN_1 Pin=Q203-G
+Added Pin To Net: NetName=LED_GREEN_1 Pin=R212-1
+Added Net: Name=LED_GREEN_1
+Added Pin To Net: NetName=LED_GREEN_2 Pin=J2-3
+Added Pin To Net: NetName=LED_GREEN_2 Pin=Q202-G
+Added Pin To Net: NetName=LED_GREEN_2 Pin=R211-1
+Added Net: Name=LED_GREEN_2
+Added Pin To Net: NetName=LED_GREEN_3 Pin=J2-1
+Added Pin To Net: NetName=LED_GREEN_3 Pin=Q201-G
+Added Pin To Net: NetName=LED_GREEN_3 Pin=R210-1
+Added Net: Name=LED_GREEN_3
+Added Pin To Net: NetName=LED_RED_1 Pin=J2-17
+Added Pin To Net: NetName=LED_RED_1 Pin=Q209-G
+Added Pin To Net: NetName=LED_RED_1 Pin=R218-1
+Added Net: Name=LED_RED_1
+Added Pin To Net: NetName=LED_RED_2 Pin=J2-15
+Added Pin To Net: NetName=LED_RED_2 Pin=Q208-G
+Added Pin To Net: NetName=LED_RED_2 Pin=R217-1
+Added Net: Name=LED_RED_2
+Added Pin To Net: NetName=LED_RED_3 Pin=J2-13
+Added Pin To Net: NetName=LED_RED_3 Pin=Q207-G
+Added Pin To Net: NetName=LED_RED_3 Pin=R216-1
+Added Net: Name=LED_RED_3
+Added Pin To Net: NetName=LED_YELLOW_1 Pin=J2-11
+Added Pin To Net: NetName=LED_YELLOW_1 Pin=Q206-G
+Added Pin To Net: NetName=LED_YELLOW_1 Pin=R215-1
+Added Net: Name=LED_YELLOW_1
+Added Pin To Net: NetName=LED_YELLOW_2 Pin=J2-9
+Added Pin To Net: NetName=LED_YELLOW_2 Pin=Q205-G
+Added Pin To Net: NetName=LED_YELLOW_2 Pin=R214-1
+Added Net: Name=LED_YELLOW_2
+Added Pin To Net: NetName=LED_YELLOW_3 Pin=J2-7
+Added Pin To Net: NetName=LED_YELLOW_3 Pin=Q204-G
+Added Pin To Net: NetName=LED_YELLOW_3 Pin=R213-1
+Added Net: Name=LED_YELLOW_3

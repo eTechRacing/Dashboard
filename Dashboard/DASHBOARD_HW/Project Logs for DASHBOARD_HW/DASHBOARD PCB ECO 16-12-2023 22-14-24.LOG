@@ -1,0 +1,7 @@
+Added Pin To Net: NetName=NetSW401_A1 Pin=DS?-34
+Added Pin To Net: NetName=NetSW401_A1 Pin=DS?-35
+Added Pin To Net: NetName=NetSW401_A1 Pin=J2-2
+Added Pin To Net: NetName=NetSW401_A1 Pin=J3-1
+Added Pin To Net: NetName=NetSW401_A1 Pin=J4-1
+Added Pin To Net: NetName=NetSW401_A1 Pin=SW401-A2
+Change Net Name : Old Net Name=NetSW401_A1 New Net Name=+3.3

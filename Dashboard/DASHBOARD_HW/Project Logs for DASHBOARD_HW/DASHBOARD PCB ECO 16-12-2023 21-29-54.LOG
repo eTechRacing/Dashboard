@@ -1,0 +1,66 @@
+Removed Pin From Net: NetName=UP_BUTTON Pin=SW401-1
+Removed Pin From Net: NetName=UP_BUTTON Pin=SW401-2
+Removed Pin From Net: NetName=+3.3 Pin=SW401-3
+Removed Pin From Net: NetName=+3.3 Pin=SW401-4
+Removed Pin From Net: NetName=DOWN_BUTTON Pin=SW402-1
+Removed Pin From Net: NetName=DOWN_BUTTON Pin=SW402-2
+Removed Pin From Net: NetName=+3.3 Pin=SW402-3
+Removed Pin From Net: NetName=+3.3 Pin=SW402-4
+Removed Pin From Net: NetName=RIGHT_BUTTON Pin=SW403-1
+Removed Pin From Net: NetName=RIGHT_BUTTON Pin=SW403-2
+Removed Pin From Net: NetName=+3.3 Pin=SW403-3
+Removed Pin From Net: NetName=+3.3 Pin=SW403-4
+Removed Pin From Net: NetName=LEFT_BUTTON Pin=SW404-1
+Removed Pin From Net: NetName=LEFT_BUTTON Pin=SW404-2
+Removed Pin From Net: NetName=+3.3 Pin=SW404-3
+Removed Pin From Net: NetName=+3.3 Pin=SW404-4
+Removed Pin From Net: NetName=OK_BUTTON Pin=SW405-1
+Removed Pin From Net: NetName=OK_BUTTON Pin=SW405-2
+Removed Pin From Net: NetName=+3.3 Pin=SW405-3
+Removed Pin From Net: NetName=+3.3 Pin=SW405-4
+Change Component Footprint: Designator=SW401 Old Footprint=SWITCH/NO New Footprint=SWITCH_12x12/4304x60737x6
+Change Component Footprint: Designator=SW402 Old Footprint=SWITCH/NO New Footprint=SWITCH_12x12/4304x60737x6
+Change Component Footprint: Designator=SW403 Old Footprint=SWITCH/NO New Footprint=SWITCH_12x12/4304x60737x6
+Change Component Footprint: Designator=SW404 Old Footprint=SWITCH/NO New Footprint=SWITCH_12x12/4304x60737x6
+Change Component Footprint: Designator=SW405 Old Footprint=SWITCH/NO New Footprint=SWITCH_12x12/4304x60737x6
+Change Component Comment : Designator=SW401 Old Comment=11.521 New Comment=430456073736
+Change Component Comment : Designator=SW402 Old Comment=11.521 New Comment=430456073736
+Change Component Comment : Designator=SW403 Old Comment=11.521 New Comment=430456073736
+Change Component Comment : Designator=SW404 Old Comment=11.521 New Comment=430456073736
+Change Component Comment : Designator=SW405 Old Comment=11.521 New Comment=430456073736
+Change component parameters: Designator = "SW401" ("SW401"); Footprint = "SWITCH/NO"; UniqueID = "\SBUNIRFT" ("\SBUNIRFT")
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Rs"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = "7856320"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SW402" ("SW402"); Footprint = "SWITCH/NO"; UniqueID = "\NITHTFBO" ("\NITHTFBO")
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Rs"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = "7856320"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SW403" ("SW403"); Footprint = "SWITCH/NO"; UniqueID = "\AUGWWWVR" ("\AUGWWWVR")
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Rs"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = "7856320"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SW404" ("SW404"); Footprint = "SWITCH/NO"; UniqueID = "\TNTVKSLO" ("\TNTVKSLO")
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Rs"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = "7856320"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SW405" ("SW405"); Footprint = "SWITCH/NO"; UniqueID = "\IVQVCILI" ("\IVQVCILI")
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Rs"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = "7856320"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+3.3 Pin=SW401-A2
+Added Pin To Net: NetName=UP_BUTTON Pin=SW401-B1
+Added Pin To Net: NetName=UP_BUTTON Pin=SW401-B2
+Added Pin To Net: NetName=DOWN_BUTTON Pin=SW402-B1
+Added Pin To Net: NetName=DOWN_BUTTON Pin=SW402-B2
+Added Pin To Net: NetName=RIGHT_BUTTON Pin=SW403-B1
+Added Pin To Net: NetName=RIGHT_BUTTON Pin=SW403-B2
+Added Pin To Net: NetName=LEFT_BUTTON Pin=SW404-B1
+Added Pin To Net: NetName=LEFT_BUTTON Pin=SW404-B2
+Added Pin To Net: NetName=OK_BUTTON Pin=SW405-B1
+Added Pin To Net: NetName=OK_BUTTON Pin=SW405-B2
+Added Pin To Net: NetName=NetSW401_A1 Pin=SW401-A1
+Added Pin To Net: NetName=NetSW401_A1 Pin=SW402-A1
+Added Pin To Net: NetName=NetSW401_A1 Pin=SW402-A2
+Added Pin To Net: NetName=NetSW401_A1 Pin=SW403-A1
+Added Pin To Net: NetName=NetSW401_A1 Pin=SW403-A2
+Added Pin To Net: NetName=NetSW401_A1 Pin=SW404-A1
+Added Pin To Net: NetName=NetSW401_A1 Pin=SW404-A2
+Added Pin To Net: NetName=NetSW401_A1 Pin=SW405-A1
+Added Pin To Net: NetName=NetSW401_A1 Pin=SW405-A2
+Added Net: Name=NetSW401_A1

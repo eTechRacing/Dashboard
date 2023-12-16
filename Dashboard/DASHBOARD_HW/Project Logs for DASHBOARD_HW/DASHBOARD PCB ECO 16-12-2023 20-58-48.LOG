@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=SI_LCD Pin=J4-12
+Removed Pin From Net: NetName=CLK_LCD Pin=J4-14
+Removed Pin From Net: NetName=CS_LCD Pin=J4-18
+Added Pin To Net: NetName=CS_LCD Pin=J4-12
+Added Pin To Net: NetName=RST_LCD Pin=J4-14
+Added Pin To Net: NetName=CLK_LCD Pin=J4-18
+Added Pin To Net: NetName=SI_LCD Pin=J4-20

@@ -1,0 +1,16 @@
+Added Pin To Net: NetName=A0_LCD Pin=DS?-38
+Added Pin To Net: NetName=A0_LCD Pin=J4-16
+Added Net: Name=A0_LCD
+Added Pin To Net: NetName=CLK_LCD Pin=DS?-37
+Added Pin To Net: NetName=CLK_LCD Pin=J4-14
+Added Net: Name=CLK_LCD
+Added Pin To Net: NetName=CS_LCD Pin=DS?-40
+Added Pin To Net: NetName=CS_LCD Pin=J4-18
+Added Net: Name=CS_LCD
+Added Pin To Net: NetName=RST_LCD Pin=DS?-39
+Added Net: Name=RST_LCD
+Added Pin To Net: NetName=RSTLCD Pin=J4-20
+Added Net: Name=RSTLCD
+Added Pin To Net: NetName=SI_LCD Pin=DS?-36
+Added Pin To Net: NetName=SI_LCD Pin=J4-12
+Added Net: Name=SI_LCD
