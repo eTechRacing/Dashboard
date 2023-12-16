@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=SC_END_LED Pin=J402-1
+Removed Pin From Net: NetName=TS_OFF Pin=J402-2
+Added Pin To Net: NetName=TS_OFF Pin=J402-1
+Added Pin To Net: NetName=SC_END_LED Pin=J402-2

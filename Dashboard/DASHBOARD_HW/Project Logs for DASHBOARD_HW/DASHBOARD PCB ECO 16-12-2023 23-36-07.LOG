@@ -1,0 +1,2 @@
+Removed Pin From Net: NetName=SC_END_LED Pin=J3-28
+Added Member To Class: ClassName=Display Member=Component DS? EA_DOGL128W-6
