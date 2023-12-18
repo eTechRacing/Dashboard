@@ -1,0 +1,5 @@
+Change Component Designator: OldDesignator=DS? NewDesignator=DS301
+Change Net Name : Old Net Name=NetDS?_1 New Net Name=NetDS301_1
+Change Net Name : Old Net Name=NetDS?_2 New Net Name=NetDS301_2
+Change Net Name : Old Net Name=NetDS?_3 New Net Name=NetDS301_3
+Change Class Name : Old Net Name=MASTER_HW New Net Name=DASHBOARD
