@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=TS_OFF Pin=J401-1
+Removed Pin From Net: NetName=SC_END_LED Pin=J401-2
+Added Pin To Net: NetName=SC_END_LED Pin=J401-1
+Added Pin To Net: NetName=TS_OFF Pin=J401-2
+Add Net: Net with name "BUZZER_CONTROL" already exists
+Add Net: Net with name "DOWN_BUTTON" already exists
+Add Net: Net with name "LED_GREEN_1" already exists
+Add Net: Net with name "LED_RED_2" already exists
+Add Net: Net with name "RIGHT_BUTTON" already exists
