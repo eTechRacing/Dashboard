@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------
-NCDrill File Report For: DASHBOARD.PcbDoc   20/02/2024  22:50:10
+NCDrill File Report For: DASHBOARD.PcbDoc   23/02/2024  20:26:57
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Layer Pair : Top Layer to Bottom Layer
@@ -7,7 +7,7 @@ ASCII RoundHoles File : DASHBOARD.TXT
 
 Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
 ----------------------------------------------------------------------------------------------------------------------------------
-T1      0.3mm (12mil)                                             Round             13        PTH        290.89mm (11.45inch)
+T1      0.3mm (12mil)                                             Round             16        PTH        287.41mm (11.32inch)
 T2      0.5mm (20mil)                                             Round             32        PTH        229.31mm (9.03inch)
 T3      0.7mm (28mil)                                             Round             26        PTH        144.78mm (5.70inch)
 T4      1mm (39mil)                                               Round             26        PTH        287.59mm (11.32inch)
@@ -16,6 +16,6 @@ T6      3mm (118mil)                                              Round         
 T7      3.2mm (126mil)                                            Round             4         PTH        175.00mm (6.89inch)
 T8      4.2mm (165mil)                                            Round             4         PTH        390.00mm (15.35inch)
 ----------------------------------------------------------------------------------------------------------------------------------
-Totals                                                                              131
+Totals                                                                              134
 
 Total Processing Time (hh:mm:ss) : 00:00:00

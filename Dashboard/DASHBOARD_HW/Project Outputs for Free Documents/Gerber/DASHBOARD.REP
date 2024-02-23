@@ -2,43 +2,14 @@
 FileName = DASHBOARD.GBR
 AutoAperture = True
 *************************************************************
-Generating : Top Layer
-      File : DASHBOARD.GTL
+Generating : Mechanical 1
+      File : DASHBOARD.GM1
 
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
+    Adding Layer      : Mechanical 1
 
 
 Used DCodes :
-    D12
-    D13
-    D14
-    D15
-    D29
     D30
-    D31
-    D32
-    D33
-    D34
-    D35
-    D36
-    D37
-    D38
-    D39
-*************************************************************
-
-*************************************************************
-Generating : Top Overlay
-      File : DASHBOARD.GTO
-
-    Adding Layer      : Top Overlay
-
-
-Used DCodes :
-    D10
-    D11
-    D12
 *************************************************************
 
 *************************************************************
@@ -56,25 +27,13 @@ Used DCodes :
     D13
     D14
     D15
-    D40
     D41
     D42
     D43
     D44
     D45
     D46
-*************************************************************
-
-*************************************************************
-Generating : Bottom Overlay
-      File : DASHBOARD.GBO
-
-    Adding Layer      : Bottom Overlay
-
-
-Used DCodes :
-    D10
-    D12
+    D47
 *************************************************************
 
 *************************************************************
@@ -95,8 +54,10 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Bottom Layer
-      File : DASHBOARD.GBL
+Generating : Bottom Solder
+      File : DASHBOARD.GBS
+
+    Adding Layer      : Bottom Solder
 
     Adding Layer      : Bottom Layer
 
@@ -104,38 +65,26 @@ Generating : Bottom Layer
 
 
 Used DCodes :
-    D12
-    D13
-    D14
-    D15
-    D29
-    D31
-    D32
-    D33
-    D34
-    D35
-    D36
-    D37
-    D38
-    D39
-    D40
-    D41
-    D42
-    D43
-    D44
-    D45
-    D46
-*************************************************************
-
-*************************************************************
-Generating : Mechanical 1
-      File : DASHBOARD.GM1
-
-    Adding Layer      : Mechanical 1
-
-
-Used DCodes :
-    D29
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
 *************************************************************
 
 *************************************************************
@@ -166,10 +115,33 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Bottom Solder
-      File : DASHBOARD.GBS
+Generating : Bottom Overlay
+      File : DASHBOARD.GBO
 
-    Adding Layer      : Bottom Solder
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D10
+    D12
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : DASHBOARD.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : DASHBOARD.GBL
 
     Adding Layer      : Bottom Layer
 
@@ -177,26 +149,55 @@ Generating : Bottom Solder
 
 
 Used DCodes :
-    D16
-    D17
-    D18
-    D19
-    D20
-    D21
-    D22
-    D23
-    D24
-    D25
-    D26
-    D27
-    D28
+    D12
+    D13
+    D14
+    D15
+    D30
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
     D47
-    D48
-    D49
-    D50
-    D51
-    D52
-    D53
+*************************************************************
+
+*************************************************************
+Generating : Top Layer
+      File : DASHBOARD.GTL
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D12
+    D13
+    D14
+    D15
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
 *************************************************************
 
 *************************************************************
@@ -205,6 +206,6 @@ Generating : Profile
 
 
 Used DCodes :
-    D54
+    D55
 *************************************************************
 

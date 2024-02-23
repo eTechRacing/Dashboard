@@ -1,0 +1,84 @@
+Removed Pin From Net: NetName=+3.3 Pin=J4-1
+Removed Pin From Net: NetName=PE3 Pin=J4-2
+Removed Pin From Net: NetName=+24 Pin=J4-3
+Removed Pin From Net: NetName=PE1 Pin=J4-4
+Removed Pin From Net: NetName=+24 Pin=J4-5
+Removed Pin From Net: NetName=PE0 Pin=J4-6
+Removed Pin From Net: NetName=+24 Pin=J4-7
+Removed Pin From Net: NetName=PB9 Pin=J4-8
+Removed Pin From Net: NetName=+24 Pin=J4-9
+Removed Pin From Net: NetName=PB8 Pin=J4-10
+Removed Pin From Net: NetName=PD7 Pin=J4-11
+Removed Pin From Net: NetName=CS_LCD Pin=J4-12
+Removed Pin From Net: NetName=PD6 Pin=J4-13
+Removed Pin From Net: NetName=RST_LCD Pin=J4-14
+Removed Pin From Net: NetName=PD5 Pin=J4-15
+Removed Pin From Net: NetName=SI_LCD Pin=J4-16
+Removed Pin From Net: NetName=PD4 Pin=J4-17
+Removed Pin From Net: NetName=A0_LCD Pin=J4-18
+Removed Pin From Net: NetName=PD3 Pin=J4-19
+Removed Pin From Net: NetName=CLK_LCD Pin=J4-20
+Removed Pin From Net: NetName=PD2 Pin=J4-21
+Removed Pin From Net: NetName=PC12 Pin=J4-22
+Removed Pin From Net: NetName=+5 Pin=J4-23
+Removed Pin From Net: NetName=PC11 Pin=J4-24
+Removed Pin From Net: NetName=+5 Pin=J4-25
+Removed Pin From Net: NetName=PC10 Pin=J4-26
+Removed Pin From Net: NetName=+5 Pin=J4-27
+Removed Pin From Net: NetName=PA15 Pin=J4-28
+Add Component: Footprint Not Found 62132821021
+Added Pin To Net: NetName=PA15 Pin=J4-1
+Added Pin To Net: NetName=+5 Pin=J4-2
+Added Pin To Net: NetName=PC10 Pin=J4-3
+Added Pin To Net: NetName=+5 Pin=J4-4
+Added Pin To Net: NetName=PC11 Pin=J4-5
+Added Pin To Net: NetName=+5 Pin=J4-6
+Added Pin To Net: NetName=PC12 Pin=J4-7
+Added Pin To Net: NetName=PD2 Pin=J4-8
+Added Pin To Net: NetName=CLK_LCD Pin=J4-9
+Added Pin To Net: NetName=PD3 Pin=J4-10
+Added Pin To Net: NetName=A0_LCD Pin=J4-11
+Added Pin To Net: NetName=PD4 Pin=J4-12
+Added Pin To Net: NetName=SI_LCD Pin=J4-13
+Added Pin To Net: NetName=PD5 Pin=J4-14
+Added Pin To Net: NetName=RST_LCD Pin=J4-15
+Added Pin To Net: NetName=PD6 Pin=J4-16
+Added Pin To Net: NetName=CS_LCD Pin=J4-17
+Added Pin To Net: NetName=PD7 Pin=J4-18
+Added Pin To Net: NetName=PB8 Pin=J4-19
+Added Pin To Net: NetName=+24 Pin=J4-20
+Added Pin To Net: NetName=PB9 Pin=J4-21
+Added Pin To Net: NetName=+24 Pin=J4-22
+Added Pin To Net: NetName=PE0 Pin=J4-23
+Added Pin To Net: NetName=+24 Pin=J4-24
+Added Pin To Net: NetName=PE1 Pin=J4-25
+Added Pin To Net: NetName=+24 Pin=J4-26
+Added Pin To Net: NetName=PE3 Pin=J4-27
+Added Pin To Net: NetName=+3.3 Pin=J4-28
+Add Pin To Net: Unknown Pin: Pin J?-1
+Add Pin To Net: Unknown Pin: Pin J?-2
+Add Pin To Net: Unknown Pin: Pin J?-4
+Add Pin To Net: Unknown Pin: Pin J?-6
+Add Pin To Net: Unknown Pin: Pin J?-8
+Add Pin To Net: Unknown Pin: Pin J?-10
+Add Pin To Net: Unknown Pin: Pin J?-11
+Add Pin To Net: Unknown Pin: Pin J?-13
+Add Pin To Net: Unknown Pin: Pin J?-15
+Add Pin To Net: Unknown Pin: Pin J?-17
+Add Pin To Net: Unknown Pin: Pin J?-19
+Add Pin To Net: Unknown Pin: Pin J?-21
+Add Pin To Net: Unknown Pin: Pin J?-22
+Add Pin To Net: Unknown Pin: Pin J?-23
+Add Pin To Net: Unknown Pin: Pin J?-24
+Add Pin To Net: Unknown Pin: Pin J?-25
+Add Pin To Net: Unknown Pin: Pin J?-26
+Add Pin To Net: Unknown Pin: Pin J?-27
+Add Pin To Net: Unknown Pin: Pin J?-28
+Add Net: Net with name "LED_RED_2" already exists
+Added Net: Name=LV tr
+Added Net: Name=PB3
+Added Net: Name=PB4
+Added Net: Name=PB5
+Added Net: Name=PB6
+Added Net: Name=PB7
+Add Class Member: Failed to add class member : Component J? 62132821021

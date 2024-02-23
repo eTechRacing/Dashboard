@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=OK_BUTTON Pin=J1-21
+Removed Pin From Net: NetName=LEFT_BUTTON Pin=J1-23
+Removed Pin From Net: NetName=UP_BUTTON Pin=J1-25
+Added Pin To Net: NetName=OK_BUTTON Pin=J1-22
+Added Pin To Net: NetName=LEFT_BUTTON Pin=J1-24
+Added Pin To Net: NetName=UP_BUTTON Pin=J1-26
+Add Net: Net with name "DOWN_BUTTON" already exists
+Add Net: Net with name "LED_GREEN_1" already exists
+Add Net: Net with name "LED_RED_2" already exists
+Add Net: Net with name "RIGHT_BUTTON" already exists

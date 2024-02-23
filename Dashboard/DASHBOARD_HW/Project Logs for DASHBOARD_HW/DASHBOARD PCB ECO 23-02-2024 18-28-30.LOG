@@ -1,0 +1,17 @@
+Removed Pin From Net: NetName=LED_GREEN_1 Pin=J2-21
+Removed Pin From Net: NetName=+3.3 Pin=J3-1
+Removed Pin From Net: NetName=+24 Pin=J3-3
+Removed Pin From Net: NetName=+24 Pin=J3-5
+Removed Pin From Net: NetName=+24 Pin=J3-7
+Removed Pin From Net: NetName=+24 Pin=J3-9
+Removed Pin From Net: NetName=+24 Pin=J3-11
+Removed Pin From Net: NetName=GND Pin=J3-23
+Added Pin To Net: NetName=GND Pin=J3-5
+Added Pin To Net: NetName=+24 Pin=J3-17
+Added Pin To Net: NetName=+24 Pin=J3-19
+Added Pin To Net: NetName=+24 Pin=J3-21
+Added Pin To Net: NetName=+24 Pin=J3-23
+Added Pin To Net: NetName=+24 Pin=J3-25
+Added Pin To Net: NetName=+3.3 Pin=J3-27
+Add Net: Net with name "LED_GREEN_1" already exists
+Add Net: Net with name "LED_RED_2" already exists

@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=AMS_LED Pin=J1-4
+Added Pin To Net: NetName=AMS_LED Pin=J1-3
+Add Net: Net with name "DOWN_BUTTON" already exists
+Add Net: Net with name "LED_GREEN_1" already exists
+Add Net: Net with name "LED_RED_2" already exists
+Add Net: Net with name "RIGHT_BUTTON" already exists
