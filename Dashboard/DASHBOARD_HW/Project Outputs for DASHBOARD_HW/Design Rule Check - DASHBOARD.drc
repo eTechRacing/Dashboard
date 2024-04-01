@@ -1,37 +1,39 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\Guillem Ropero\Documents\GitHub\Dashboard\Dashboard\DASHBOARD_HW\DASHBOARD.PcbDoc
-Date     : 23/02/2024
-Time     : 20:19:49
+Date     : 24/02/2024
+Time     : 21:19:11
 
 Processing Rule : Clearance Constraint (Gap=0.2mm) (All),(All)
+   Violation between Clearance Constraint: (Collision < 0.2mm) Between Pad J1-17(52.95mm,31.905mm) on Bottom Layer And Track (52.95mm,31.905mm)(57.05mm,31.905mm) on Bottom Layer 
+   Violation between Clearance Constraint: (Collision < 0.2mm) Between Pad J1-18(57.05mm,31.905mm) on Bottom Layer And Track (52.95mm,31.905mm)(57.05mm,31.905mm) on Bottom Layer 
+   Violation between Clearance Constraint: (Collision < 0.2mm) Between Pad J1-18(57.05mm,31.905mm) on Bottom Layer And Track (57.05mm,31.905mm)(57.757mm,31.905mm) on Bottom Layer 
+   Violation between Clearance Constraint: (Collision < 0.2mm) Between Pad J1-18(57.05mm,31.905mm) on Bottom Layer And Track (57.757mm,31.905mm)(59.944mm,29.718mm) on Bottom Layer 
+   Violation between Clearance Constraint: (Collision < 0.2mm) Between Pad J1-19(52.95mm,33.175mm) on Bottom Layer And Track (52.95mm,33.175mm)(57.05mm,33.175mm) on Bottom Layer 
    Violation between Clearance Constraint: (0.176mm < 0.2mm) Between Pad J1-2(57.05mm,21.745mm) on Bottom Layer And Track (54.493mm,18.542mm)(57.05mm,21.099mm) on Bottom Layer 
    Violation between Clearance Constraint: (Collision < 0.2mm) Between Pad J1-2(57.05mm,21.745mm) on Bottom Layer And Track (57.05mm,21.099mm)(57.05mm,21.745mm) on Bottom Layer 
+   Violation between Clearance Constraint: (Collision < 0.2mm) Between Pad J1-20(57.05mm,33.175mm) on Bottom Layer And Track (52.95mm,33.175mm)(57.05mm,33.175mm) on Bottom Layer 
    Violation between Clearance Constraint: (Collision < 0.2mm) Between Pad J1-20(57.05mm,33.175mm) on Bottom Layer And Track (57.05mm,33.175mm)(58.011mm,33.175mm) on Bottom Layer 
    Violation between Clearance Constraint: (0.011mm < 0.2mm) Between Pad J1-20(57.05mm,33.175mm) on Bottom Layer And Track (58.011mm,33.175mm)(59.182mm,32.004mm) on Bottom Layer 
-   Violation between Clearance Constraint: (Collision < 0.2mm) Between Pad J1-3(52.95mm,23.015mm) on Bottom Layer And Track (51.082mm,23.015mm)(52.95mm,23.015mm) on Bottom Layer 
    Violation between Clearance Constraint: (Collision < 0.2mm) Between Pad J2-12(41.905mm,15.05mm) on Bottom Layer And Track (41.905mm,15.05mm)(41.91mm,15.045mm) on Bottom Layer 
    Violation between Clearance Constraint: (Collision < 0.2mm) Between Pad J2-12(41.905mm,15.05mm) on Bottom Layer And Track (41.91mm,12.7mm)(41.91mm,15.045mm) on Bottom Layer 
    Violation between Clearance Constraint: (Collision < 0.2mm) Between Pad J2-22(35.555mm,15.05mm) on Bottom Layer And Via (35.555mm,15.3mm) from Top Layer to Bottom Layer 
-   Violation between Clearance Constraint: (Collision < 0.2mm) Between Pad R411-1(165.084mm,19.213mm) on Bottom Layer And Track (71.428mm,19.25mm)(170.5mm,19.25mm) on Bottom Layer 
-   Violation between Clearance Constraint: (Collision < 0.2mm) Between Pad SW402-B1(170.5mm,19.25mm) on Multi-Layer And Track (71.428mm,19.25mm)(170.5mm,19.25mm) on Bottom Layer 
-Rule Violations :10
+Rule Violations :13
 
 Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+   Violation between Short-Circuit Constraint: Between Pad J1-17(52.95mm,31.905mm) on Bottom Layer And Track (52.95mm,31.905mm)(57.05mm,31.905mm) on Bottom Layer Location : [X = 53.324mm][Y = 31.905mm]
+   Violation between Short-Circuit Constraint: Between Pad J1-18(57.05mm,31.905mm) on Bottom Layer And Track (52.95mm,31.905mm)(57.05mm,31.905mm) on Bottom Layer Location : [X = 56.676mm][Y = 31.905mm]
    Violation between Short-Circuit Constraint: Between Pad J1-18(57.05mm,31.905mm) on Bottom Layer And Track (57.05mm,31.905mm)(57.757mm,31.905mm) on Bottom Layer Location : [X = 57.403mm][Y = 31.905mm]
    Violation between Short-Circuit Constraint: Between Pad J1-18(57.05mm,31.905mm) on Bottom Layer And Track (57.757mm,31.905mm)(59.944mm,29.718mm) on Bottom Layer Location : [X = 57.778mm][Y = 31.812mm]
+   Violation between Short-Circuit Constraint: Between Pad J1-19(52.95mm,33.175mm) on Bottom Layer And Track (52.95mm,33.175mm)(57.05mm,33.175mm) on Bottom Layer Location : [X = 53.323mm][Y = 33.175mm]
    Violation between Short-Circuit Constraint: Between Pad J1-2(57.05mm,21.745mm) on Bottom Layer And Track (57.05mm,21.099mm)(57.05mm,21.745mm) on Bottom Layer Location : [X = 57.05mm][Y = 21.611mm]
+   Violation between Short-Circuit Constraint: Between Pad J1-20(57.05mm,33.175mm) on Bottom Layer And Track (52.95mm,33.175mm)(57.05mm,33.175mm) on Bottom Layer Location : [X = 56.677mm][Y = 33.175mm]
    Violation between Short-Circuit Constraint: Between Pad J1-20(57.05mm,33.175mm) on Bottom Layer And Track (57.05mm,33.175mm)(58.011mm,33.175mm) on Bottom Layer Location : [X = 57.424mm][Y = 33.175mm]
-   Violation between Short-Circuit Constraint: Between Pad J1-3(52.95mm,23.015mm) on Bottom Layer And Track (51.082mm,23.015mm)(52.95mm,23.015mm) on Bottom Layer Location : [X = 52.576mm][Y = 23.015mm]
    Violation between Short-Circuit Constraint: Between Pad J2-12(41.905mm,15.05mm) on Bottom Layer And Track (41.905mm,15.05mm)(41.91mm,15.045mm) on Bottom Layer Location : [X = 41.907mm][Y = 15.048mm]
    Violation between Short-Circuit Constraint: Between Pad J2-12(41.905mm,15.05mm) on Bottom Layer And Track (41.91mm,12.7mm)(41.91mm,15.045mm) on Bottom Layer Location : [X = 41.91mm][Y = 14.673mm]
    Violation between Short-Circuit Constraint: Between Pad J2-22(35.555mm,15.05mm) on Bottom Layer And Via (35.555mm,15.3mm) from Top Layer to Bottom Layer Location : [X = 35.555mm][Y = 15.3mm]
-   Violation between Short-Circuit Constraint: Between Pad R411-1(165.084mm,19.213mm) on Bottom Layer And Track (71.428mm,19.25mm)(170.5mm,19.25mm) on Bottom Layer Location : [X = 165.084mm][Y = 19.25mm]
-   Violation between Short-Circuit Constraint: Between Pad SW402-B1(170.5mm,19.25mm) on Multi-Layer And Track (71.428mm,19.25mm)(170.5mm,19.25mm) on Bottom Layer Location : [X = 170.1mm][Y = 19.25mm]
-Rule Violations :10
+Rule Violations :11
 
 Processing Rule : Un-Routed Net Constraint ( (All) )
-   Violation between Un-Routed Net Constraint: Net +3.3 Between Pad DS301-35(101.57mm,54.13mm) on Multi-Layer And Pad SW404-A2(153.5mm,36.25mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net AMS_LED Between Track (51.082mm,23.015mm)(52.95mm,23.015mm) on Bottom Layer And Pad J1-4(57.05mm,23.015mm) on Bottom Layer 
    Violation between Un-Routed Net Constraint: Net +3.3 Between Pad J2-1(48.255mm,10.95mm) on Bottom Layer And Track (48.255mm,47.05mm)(48.347mm,47.142mm) on Bottom Layer 
    Violation between Un-Routed Net Constraint: Net +24 Between Pad J3-17(22.95mm,31.905mm) on Bottom Layer And Pad J3-19(22.95mm,33.175mm) on Bottom Layer 
    Violation between Un-Routed Net Constraint: Net +24 Between Pad J3-19(22.95mm,33.175mm) on Bottom Layer And Pad J3-21(22.95mm,34.445mm) on Bottom Layer 
@@ -42,8 +44,7 @@ Processing Rule : Un-Routed Net Constraint ( (All) )
    Violation between Un-Routed Net Constraint: Net +24 Between Pad J4-19(43.175mm,47.05mm) on Bottom Layer And Pad J4-21(44.445mm,47.05mm) on Bottom Layer 
    Violation between Un-Routed Net Constraint: Net +24 Between Pad J4-21(44.445mm,47.05mm) on Bottom Layer And Pad J4-23(45.715mm,47.05mm) on Bottom Layer 
    Violation between Un-Routed Net Constraint: Net +24 Between Pad J4-23(45.715mm,47.05mm) on Bottom Layer And Pad J4-25(46.985mm,47.05mm) on Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net DOWN_BUTTON Between Pad R411-1(165.084mm,19.213mm) on Bottom Layer And Pad SW402-B1(170.5mm,19.25mm) on Multi-Layer 
-Rule Violations :13
+Rule Violations :10
 
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
 Rule Violations :0
@@ -220,9 +221,9 @@ Rule Violations :0
 
 Processing Rule : Net Antennae (Tolerance=0mm) (All)
    Violation between Net Antennae: Track (41.91mm,12.7mm)(41.91mm,15.045mm) on Bottom Layer 
-   Violation between Net Antennae: Track (51.082mm,23.015mm)(52.95mm,23.015mm) on Bottom Layer 
+   Violation between Net Antennae: Track (52.95mm,31.905mm)(57.05mm,31.905mm) on Bottom Layer 
+   Violation between Net Antennae: Track (52.95mm,33.175mm)(57.05mm,33.175mm) on Bottom Layer 
    Violation between Net Antennae: Track (57.05mm,21.099mm)(57.05mm,21.745mm) on Bottom Layer 
-   Violation between Net Antennae: Track (57.05mm,33.175mm)(58.011mm,33.175mm) on Bottom Layer 
    Violation between Net Antennae: Via (2.25mm,10mm) from Top Layer to Bottom Layer 
    Violation between Net Antennae: Via (2.25mm,55mm) from Top Layer to Bottom Layer 
    Violation between Net Antennae: Via (35.555mm,15.3mm) from Top Layer to Bottom Layer 
@@ -246,6 +247,6 @@ Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (Al
 Rule Violations :0
 
 
-Violations Detected : 203
+Violations Detected : 204
 Waived Violations : 0
-Time Elapsed        : 00:00:01
+Time Elapsed        : 00:00:02

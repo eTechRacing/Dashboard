@@ -100,7 +100,7 @@ GenerateClassCluster=0
 DocumentUniqueId=PBHXUPEY
 
 [Document4]
-DocumentPath=Buttons.SchDoc
+DocumentPath=Peripherals.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0

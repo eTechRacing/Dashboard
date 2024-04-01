@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------
-NCDrill File Report For: DASHBOARD.PcbDoc   23/02/2024  20:26:57
+NCDrill File Report For: DASHBOARD.PcbDoc   24/02/2024  21:35:19
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Layer Pair : Top Layer to Bottom Layer
@@ -7,7 +7,7 @@ ASCII RoundHoles File : DASHBOARD.TXT
 
 Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
 ----------------------------------------------------------------------------------------------------------------------------------
-T1      0.3mm (12mil)                                             Round             16        PTH        287.41mm (11.32inch)
+T1      0.3mm (12mil)                                             Round             16        PTH        289.68mm (11.40inch)
 T2      0.5mm (20mil)                                             Round             32        PTH        229.31mm (9.03inch)
 T3      0.7mm (28mil)                                             Round             26        PTH        144.78mm (5.70inch)
 T4      1mm (39mil)                                               Round             26        PTH        287.59mm (11.32inch)
