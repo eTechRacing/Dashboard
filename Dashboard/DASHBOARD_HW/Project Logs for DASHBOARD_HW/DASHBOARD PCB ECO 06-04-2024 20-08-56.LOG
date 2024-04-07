@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=IMD_LED Pin=J3-2
+Change Footprint: Footprint Not Found 62132821021
+Change Footprint: Footprint Not Found 62132821021
+Change Footprint: Footprint Not Found 62132821021
+Change Footprint: Footprint Not Found 62132821021
+Added Pin To Net: NetName=IMD_LED Pin=J3-4
+Added Pin To Net: NetName=BUZZER_CONTROL Pin=Q405-G
+Added Pin To Net: NetName=BUZZER_CONTROL Pin=R415-1
+Add Net: Net with name "BUZZER_CONTROL" already exists

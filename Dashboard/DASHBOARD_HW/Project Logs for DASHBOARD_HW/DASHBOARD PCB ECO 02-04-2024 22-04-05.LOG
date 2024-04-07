@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=OK_BUTTON Pin=J1-24
+Removed Pin From Net: NetName=LEFT_BUTTON Pin=J1-26
+Change Footprint: Footprint Not Found 62132821021
+Change Footprint: Footprint Not Found 62132821021
+Change Footprint: Footprint Not Found 62132821021
+Change Footprint: Footprint Not Found 62132821021
+Added Pin To Net: NetName=LEFT_BUTTON Pin=J1-24
+Added Pin To Net: NetName=OK_BUTTON Pin=J1-26

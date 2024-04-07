@@ -1,0 +1,19 @@
+Change Footprint: Footprint Not Found 62132821021
+Change Footprint: Footprint Not Found 62132821021
+Change Footprint: Footprint Not Found 62132821021
+Change Footprint: Footprint Not Found 62132821021
+Added Pin To Net: NetName=OK_BUTTON Pin=J1-24
+Added Pin To Net: NetName=LEFT_BUTTON Pin=J1-26
+Added Pin To Net: NetName=UP_BUTTON Pin=J1-28
+Added Pin To Net: NetName=LED_RED_1 Pin=J2-10
+Added Pin To Net: NetName=LED_RED_3 Pin=J2-14
+Added Pin To Net: NetName=LED_YELLOW_1 Pin=J2-16
+Added Pin To Net: NetName=LED_YELLOW_2 Pin=J2-18
+Added Pin To Net: NetName=LED_YELLOW_3 Pin=J2-20
+Added Pin To Net: NetName=LED_GREEN_2 Pin=J2-24
+Added Pin To Net: NetName=LED_GREEN_3 Pin=J2-26
+Added Pin To Net: NetName=IMD_LED Pin=J3-3
+Change Net Name : Old Net Name=PA6 New Net Name=RIGHT_BUTTON
+Change Net Name : Old Net Name=PA7 New Net Name=DOWN_BUTTON
+Change Net Name : Old Net Name=PE9 New Net Name=LED_RED_2
+Change Net Name : Old Net Name=PE14 New Net Name=LED_GREEN_1

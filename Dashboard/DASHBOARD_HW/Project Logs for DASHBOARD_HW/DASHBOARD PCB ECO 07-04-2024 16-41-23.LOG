@@ -1,0 +1,13 @@
+Change Footprint: Footprint Not Found 62132821021
+Change Footprint: Footprint Not Found 62132821021
+Change Footprint: Footprint Not Found 62132821021
+Change Footprint: Footprint Not Found 62132821021
+Added Pin To Net: NetName=LED_GREEN_1 Pin=Q203-G
+Added Pin To Net: NetName=LED_RED_2 Pin=Q208-G
+Added Pin To Net: NetName=LED_GREEN_1 Pin=R212-1
+Added Pin To Net: NetName=LED_RED_2 Pin=R217-1
+Add Net: Net with name "BUZZER_CONTROL" already exists
+Add Net: Net with name "DOWN_BUTTON" already exists
+Add Net: Net with name "LED_GREEN_1" already exists
+Add Net: Net with name "LED_RED_2" already exists
+Add Net: Net with name "RIGHT_BUTTON" already exists

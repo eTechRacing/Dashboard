@@ -1,0 +1,11 @@
+Change Footprint: Footprint Not Found 62132821021
+Change Footprint: Footprint Not Found 62132821021
+Change Footprint: Footprint Not Found 62132821021
+Change Footprint: Footprint Not Found 62132821021
+Added Pin To Net: NetName=AMS_LED Pin=J3-28
+Added Pin To Net: NetName=CLK_LCD Pin=J4-10
+Added Pin To Net: NetName=SI_LCD Pin=J4-14
+Added Pin To Net: NetName=RST_LCD Pin=J4-16
+Added Pin To Net: NetName=CS_LCD Pin=J4-18
+Added Pin To Net: NetName=A0_LCD Pin=J4-20
+Add Net: Net with name "BUZZER_CONTROL" already exists

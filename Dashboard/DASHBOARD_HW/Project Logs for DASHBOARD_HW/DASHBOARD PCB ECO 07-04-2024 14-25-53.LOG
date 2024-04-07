@@ -1,0 +1,11 @@
+Removed Pin From Net: NetName=DOWN_BUTTON Pin=J1-4
+Change Footprint: Footprint Not Found 62132821021
+Change Footprint: Footprint Not Found 62132821021
+Change Footprint: Footprint Not Found 62132821021
+Change Footprint: Footprint Not Found 62132821021
+Added Pin To Net: NetName=RIGHT_BUTTON Pin=D407-1
+Added Pin To Net: NetName=RIGHT_BUTTON Pin=R412-1
+Added Pin To Net: NetName=DOWN_BUTTON Pin=SW402-B2
+Add Net: Net with name "BUZZER_CONTROL" already exists
+Add Net: Net with name "DOWN_BUTTON" already exists
+Add Net: Net with name "RIGHT_BUTTON" already exists
