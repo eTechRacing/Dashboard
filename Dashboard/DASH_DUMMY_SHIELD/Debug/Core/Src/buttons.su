@@ -1,4 +1,0 @@
-../Core/Src/buttons.c:12:7:buttonsPrecharge	16	static
-../Core/Src/buttons.c:21:7:buttonsCompetitionMenu	24	static
-../Core/Src/buttons.c:74:7:buttonsModeMenu	24	static
-../Core/Src/buttons.c:119:7:buttonsReadyToDrive	16	static

@@ -1,9 +1,0 @@
-#ifndef BARGRAPH_H
-#define BARGRAPH_H
-
-void flancoCLK (void);
-void bargraph_init(void);
-void selectNumberLEDs (unsigned int8 parameter);
-void bargraphFunctionality(void);
-
-#endif

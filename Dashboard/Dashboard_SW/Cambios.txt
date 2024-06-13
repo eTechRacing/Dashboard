@@ -1,1 +1,0 @@
-Se ha cambiado la función de control de los leds normativos
