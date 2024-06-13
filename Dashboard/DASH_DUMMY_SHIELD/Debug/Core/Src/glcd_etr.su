@@ -1,0 +1,11 @@
+../Core/Src/glcd_etr.c:18:7:glcd_etr_command	8	static
+../Core/Src/glcd_etr.c:29:7:glcd_etr_init	96	static
+../Core/Src/glcd_etr.c:49:7:glcd_etr_data	8	static
+../Core/Src/glcd_etr.c:63:7:glcd_etr_refresh	104	static
+../Core/Src/glcd_etr.c:99:11:glcd_pixel	24	static
+../Core/Src/glcd_etr.c:121:11:glcd_etr_blank	16	static
+../Core/Src/glcd_etr.c:131:11:glcd_etr_blank_region	104	static
+../Core/Src/glcd_etr.c:153:11:glcd_flip_screen	96	static
+../Core/Src/glcd_etr.c:166:11:glcd_inverse_screen	96	static
+../Core/Src/glcd_etr.c:175:11:glcd_test_card	104	static
+../Core/Src/glcd_etr.c:191:11:glcd_contrast	96	static

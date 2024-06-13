@@ -1,0 +1,9 @@
+../Core/Src/can.c:28:6:filtercanconfig_can1	16	static
+../Core/Src/can.c:42:6:filtercanconfig_can2	16	static
+../Core/Src/can.c:56:6:message_cantx_Cooling	8	static
+../Core/Src/can.c:67:6:message_cantx_EnableDrive	8	static
+../Core/Src/can.c:77:6:message_cantx_Keep_Alive	8	static
+../Core/Src/can.c:87:6:message_cantx_Mode	8	static
+../Core/Src/can.c:97:6:message_cantx_PrechargeRequest	8	static
+../Core/Src/can.c:108:6:rx_sorter_can1	8	static
+../Core/Src/can.c:185:6:rx_sorter_can2	8	static
