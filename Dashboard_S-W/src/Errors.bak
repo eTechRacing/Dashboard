@@ -83,12 +83,12 @@ void writeError ()
    else if (PackageInterlockError==1)
    {
       blank_rectangle(24, 30, 114, 57, 0); 
-      draw_text("Package Interlock", 20, 27, Tahoma7, 1);
+      draw_text("TSMS Let's GOOO", 20, 27, Tahoma7, 1);
    }
    else
    {
-      draw_text("Oops! Something", 20, 17, Tahoma7, 1);
-      draw_text("went wrong...(", 20, 27, Tahoma7, 1);
+      draw_text("Vamos hostia que", 20, 17, Tahoma7, 1);
+      draw_text("estamos en FSG", 20, 27, Tahoma7, 1);
 
    }
    glcd_refresh();
@@ -122,9 +122,20 @@ void CheckNormativeErrors()
    if(IMD_Error==0) //per normativa, aquests leds han de fer latch quan hi ha error (no s'han d'apagar). El problema era que BMS enviava error just encendre i els LEDs es quedaven en latch. Per aix?, el primer missatge d'error ?s ignorat.
    {
       output_HIGH(LED_IMD);
+      popUpWindow();
+   }
+   else
+   {
+      output_LOW(LED_IMD);
+      
    }
    if(BMS_Error==0)
    {
       output_HIGH(LED_AMS);
+      popUpWindow();
+   }
+   else
+   {
+      output_LOW(LED_AMS);
    }
 }

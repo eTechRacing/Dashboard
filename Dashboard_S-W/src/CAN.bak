@@ -92,8 +92,9 @@ void canrx0_int()
    cobid=((unsigned int16)RXB0SIDH<<3)|((RXB0SIDL & 0xE0)>>5); //Assignem a la variable cobid l'identificador del missatge
    lengthCAN=(unsigned int8)RXB0DLC & 0xF;
    
-   if (cobid==0x80) //Si l'ETAS envia missatge de sincronia amb l'ID 0x80 (AP_ETAS_Synchronism)
-   {  
+   //if (cobid==0x80) //Si l'ETAS envia missatge de sincronia amb l'ID 0x80 (AP_ETAS_Synchronism)
+   if (cobid==0x80)
+   {
       contador_Sincronismo++;
       if (contador_Sincronismo>=4)//keep alive
       {
@@ -125,7 +126,7 @@ void canrx0_int()
    
    if(cobid==0xC5) //AP_ETAS_DashData1
    {
-      PrechargeVoltage=make16(RXB0D0,RXB0D1);//El voltaje viene en el D0 y el D1
+      PrechargeVoltage=make16(RXB0D0,RXB0D1);//El voltaje viene en el D0 y el D1a
       PrechargePercentage=RXB0D2;//El porcentaje viene en el D2
       LVbatteryVoltage=make16(RXB0D3,RXB0D4);//El voltaje de batería viene en el D3 y D4
       LVbatterySOC=RXB0D5;//El SOC viene en el D5
@@ -138,10 +139,23 @@ void canrx0_int()
       APPS2value=RXB0D1;
       percentatgeBrakeSensor=RXB0D2;//0.4 esta para controlar si encender la luz antes o despues?
       SteeringSensorValue=RXB0D3;
-      SKF_actual=RXB0D4;
-      CKF_actual=RXB0D5;
+      //SKF_actual=RXB0D4;
+      //CKF_actual=RXB0D5;
    }
-   
+
+   if(cobid==0x93) //AP_BMS_BatteryTemperatures
+   {
+      SKF_actual=make16(RXB0D2,RXB0D3); // Highest cell temperature
+   }
+
+   if(cobid==0x92) //AP_BMS_BatteryTemperatures
+   {
+      Speed=make16(RXB0D0,RXB0D1); //Lowest cell voltage
+      Speed=Speed/10;
+      CKF_actual=make16(RXB0D2,RXB0D3); // Highest cell voltage
+      CKF_actual=CKF_actual/10;
+   }
+
    if(cobid==0xBA) //ETAS manda los mensajes de Shutdown con el cobid 0xBA
    {
       infoShutdownActual=make16(RXB0D0,RXB0D1);
@@ -172,5 +186,3 @@ void canConfiguration ()
    enable_interrupts(int_canrx0); //Habilitem la interrupcio de CAN int_canrx0
    enable_interrupts(GLOBAL); //Habilitem les interrupcions globals
 }
-
-

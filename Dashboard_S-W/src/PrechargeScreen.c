@@ -11,8 +11,8 @@ void precharge_message (void)
    blank_rectangle(1,1,130,64,0);
    draw_text("PRE-CHARGE SEQUENCE", 10, 3, Tahoma7, 1);// carstate==9
    draw_line(1, 14, 128, 14, 1);
-   draw_text("sequence inicialization", 14, 30, Tahoma7, 1);// carstate==6
-   draw_text("Waiting for precharge", 20, 20, Tahoma7, 1);  // carstate==3
+   draw_text("cosas guapas", 14, 30, Tahoma7, 1);// carstate==6
+   draw_text("Dame", 20, 20, Tahoma7, 1);  // carstate==3
    draw_box (14, 48, 114, 63, 1); //Recuadre que indicar? el percentatge de precharge
    glcd_refresh();
 }
@@ -27,14 +27,14 @@ void Pantalla_carga_precharge()
    {
       switch(prescalerTimer)
       {
-         case 1: draw_text("sequence inicialization .", 14, 30, Tahoma7, 1);
+         case 1: draw_text("cosas guapas .", 14, 30, Tahoma7, 1);
                  break;
-         case 2: draw_text("sequence inicialization . .", 14, 30, Tahoma7, 1);
+         case 2: draw_text("cosas guapas . .", 14, 30, Tahoma7, 1);
                  break;
-         case 3: draw_text("sequence inicialization . . .", 14, 30, Tahoma7, 1);
+         case 3: draw_text("cosas guapas . . .", 14, 30, Tahoma7, 1);
                  break;
       }
-      draw_text("Waiting for precharge", 20, 20, Tahoma7, 1);  
+      draw_text("Dame", 20, 20, Tahoma7, 1);  
    }  
    glcd_refresh();//siempre hay que refrescar para que se actualice el aspecto de la pantalla
 }

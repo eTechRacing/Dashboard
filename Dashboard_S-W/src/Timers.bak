@@ -33,18 +33,18 @@ void TIMER_isr(void)
    if (normativeEnable==1)
    {
       normativeCounter++;
-      if(normativeCounter==250)
+      if(normativeCounter==500)
       {
          normativeCounter=0;
          normativeCounter2++;
          if (normativeCounter2==5)
          {
             normativeCounter2=0;
-            normativeEnable=0;
             output_low(BUZZER); //Parem el buzzer
             //PARAMOS LOS LEDS, ESTOS SE PONEN EN ALTO EN LA INICIALIZACION
             output_low(LED_AMS);
             output_low(LED_IMD);
+            normativeEnable=0;
          }
       }
    }

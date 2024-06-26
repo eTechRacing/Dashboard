@@ -1,4 +1,13 @@
+>>> Warning 216 "Project_Dashboard_2020-2021.c" Line 115(0,1): Interrupts disabled during call to prevent re-entrancy:  (glcd_command)
+>>> Warning 216 "Project_Dashboard_2020-2021.c" Line 115(0,1): Interrupts disabled during call to prevent re-entrancy:  (glcd_data)
 >>> Warning 216 "Project_Dashboard_2020-2021.c" Line 115(0,1): Interrupts disabled during call to prevent re-entrancy:  (@WRITEBITA)
+>>> Warning 216 "Project_Dashboard_2020-2021.c" Line 115(0,1): Interrupts disabled during call to prevent re-entrancy:  (blank_rectangle)
+>>> Warning 216 "Project_Dashboard_2020-2021.c" Line 115(0,1): Interrupts disabled during call to prevent re-entrancy:  (draw_text)
+>>> Warning 216 "Project_Dashboard_2020-2021.c" Line 115(0,1): Interrupts disabled during call to prevent re-entrancy:  (glcd_refresh)
+>>> Warning 216 "Project_Dashboard_2020-2021.c" Line 115(0,1): Interrupts disabled during call to prevent re-entrancy:  (draw_line)
+>>> Warning 216 "Project_Dashboard_2020-2021.c" Line 115(0,1): Interrupts disabled during call to prevent re-entrancy:  (@DIV1616)
+>>> Warning 216 "Project_Dashboard_2020-2021.c" Line 115(0,1): Interrupts disabled during call to prevent re-entrancy:  (draw_rectangle)
+>>> Warning 216 "Project_Dashboard_2020-2021.c" Line 115(0,1): Interrupts disabled during call to prevent re-entrancy:  (popUpWindow)
 >>> Warning 202 "C:\Users\amrib\Desktop\E_Tech_Racing\GitBash_etech\Dashboard\Dashboard\Dashboard_SW\inc\font_tahoma.h" Line 27(21,29): Variable never used:   Tahoma10
 >>> Warning 202 "C:\Users\amrib\Desktop\E_Tech_Racing\GitBash_etech\Dashboard\Dashboard\Dashboard_SW\inc\font_tahoma.h" Line 432(21,29): Variable never used:   Tahoma16
 >>> Warning 202 "C:\Users\amrib\Desktop\E_Tech_Racing\GitBash_etech\Dashboard\Dashboard\Dashboard_SW\inc\font_tahoma.h" Line 837(21,29): Variable never used:   Tahoma14
@@ -27,5 +36,5 @@
 >>> Warning 202 "C:\Users\amrib\Desktop\E_Tech_Racing\GitBash_etech\Dashboard\Dashboard\Dashboard_SW\inc\variables.h" Line 113(6,7): Variable never used:   c
 >>> Warning 202 "C:\Users\amrib\Desktop\E_Tech_Racing\GitBash_etech\Dashboard\Dashboard\Dashboard_SW\inc\variables.h" Line 114(6,7): Variable never used:   d
 >>> Warning 202 "C:\Users\amrib\Desktop\E_Tech_Racing\GitBash_etech\Dashboard\Dashboard\Dashboard_SW\inc\variables.h" Line 115(6,7): Variable never used:   u
-      Memory usage:   ROM=33%      RAM=72% - 79%
-      0 Errors,  29 Warnings.
+      Memory usage:   ROM=38%      RAM=72% - 86%
+      0 Errors,  38 Warnings.

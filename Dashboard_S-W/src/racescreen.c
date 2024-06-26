@@ -6,8 +6,8 @@ void write_VDCparameters(void)
        writeParameter(3,0,49,54,59,1);
        splitUP(CKF_actual);
        writeParameter(3,0,115,120,125,1);
-       draw_text("SKF_actual", 1, 1, Tahoma7, 1);
-       draw_text("CKF_actual", 64, 1, Tahoma7, 1);
+       draw_text("Temp", 1, 1, Tahoma7, 1);
+       draw_text("Vmax", 64, 1, Tahoma7, 1);
        glcd_refresh();
 }
 
@@ -17,11 +17,11 @@ void write_raceScreen (void)
    drawXparameter(Speed, 100);
    writeXparameterValue(Speed);
    //draw_text("SPEED", 5, 1, Tahoma7, 1);
-   draw_text("km/h", 80, 17, Tahoma7, 1);
+   draw_text("Vmin", 80, 17, Tahoma7, 1);
    glcd_refresh();
 }
 
-void drawXparameter (unsigned int16 parameter, unsigned int16 maxValue)
+void drawXparameter (unsigned int16 parameters_1, unsigned int16 maxValue)
 {
    blank_rectangle(6, 61, 14, 64, 0); //Aquesta comanda,juntament amb les 9 seg?ents, borren cadascuna de les barres del par?metre
    blank_rectangle(18, 59, 26, 64, 0);
@@ -33,7 +33,7 @@ void drawXparameter (unsigned int16 parameter, unsigned int16 maxValue)
    blank_rectangle(90, 42, 98, 64, 0);
    blank_rectangle(102, 38, 110, 64, 0);
    blank_rectangle(114, 32, 122, 64, 0);
-   barNumber=(((parameters*100)/maxValue)/10)+1; //Dividim entre 10 perqu? volem en tant per 10 i sumem 1 perq? sempre com a m?nim sigui 1 i el m?xim sigui a partir del 90%
+   barNumber=(((parameters_1*100)/maxValue)/10)+1; //Dividim entre 10 perqu? volem en tant per 10 i sumem 1 perq? sempre com a m?nim sigui 1 i el m?xim sigui a partir del 90%
    drawBars(barNumber);
    glcd_refresh();   
 }

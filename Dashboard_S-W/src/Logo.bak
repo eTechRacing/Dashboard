@@ -2,6 +2,7 @@
 
 void logo_ETR(void)
 {
+   /*
    //E
    blank_rectangle(25, 8, 31, 57, 1);
    blank_rectangle(31, 8, 43, 17, 1);
@@ -33,6 +34,10 @@ void logo_ETR(void)
    blank_rectangle(95, 50, 101, 52, 1);
    blank_rectangle(96, 52, 102, 57, 1);
 
-
+   */
+   draw_text("e-Tech Racing", 1, 1, Tahoma7, 1);
+   draw_text("el equipo de Formula", 1, 10, Tahoma7, 1);
+   draw_text("Studnt de la EEBE UPC", 1, 20, Tahoma7, 1);
+   
    glcd_refresh();
 }

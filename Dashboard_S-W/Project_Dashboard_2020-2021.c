@@ -26,7 +26,7 @@ main()
 {
    Dashboard_initialization(); //Iniciamos todas las variables y la pantalla
    Logo_ETR();
-   delay_ms(3000);
+   delay_ms(5000);
    glcd_blank();
    while (true)
    {
