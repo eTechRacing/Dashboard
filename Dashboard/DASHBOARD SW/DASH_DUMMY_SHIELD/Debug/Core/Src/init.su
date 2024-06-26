@@ -1,0 +1,4 @@
+../Core/Src/init.c:16:6:NORMATIVE_INIT	8	static
+../Core/Src/init.c:40:6:CAN1_CONFIG_INIT	8	static
+../Core/Src/init.c:52:6:CAN2_CONFIG_INIT	8	static
+../Core/Src/init.c:64:6:VARIABLE_RESET	24	static
