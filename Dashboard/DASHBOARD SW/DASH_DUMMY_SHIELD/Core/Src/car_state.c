@@ -22,11 +22,12 @@ void car_state_0(SPI_HandleTypeDef hspi_channel, uint8_t END_SD, uint8_t BMS_SD,
 		uint8_t Shutdown_RightTS, uint8_t Shutdown_LeftTS, uint8_t Shutdown_HVBox, uint8_t Shutdown_HVD, uint8_t *Refri_Accumulator, uint8_t *Refri_Inverters, uint8_t *Refri_Motors, uint8_t BMS_Disconnect, uint8_t Dash_Disconect, uint8_t Front_Disconenct,
 		uint8_t Ellipse_Disconect, uint8_t Rear_Disconnect, uint8_t APPS1_Disconect, uint8_t APPS2_Disconnect, uint8_t BrakePedal_Disconnect, uint8_t SteeringSensor_Disconnect,
 		uint8_t SuspRR_Disconnect, uint8_t SuspRL_Disconnect, uint8_t SuspFR_Disconnect, uint8_t SuspFL_Disconnect, uint8_t Pitot_Disconnect){
-
+	HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, 0);
 	static uint8_t flag = 0;
 	uint16_t DELAY = 150;
 	glcd_etr_init(hspi_channel);
 	glcd_etr_blank(hspi_channel);
+	LEDs_off();
 	switch(flag){
 	case 0:
 		shutdown_chain(END_SD, BMS_SD, IMD_SD, Shutdown_Setas, Shutdown_BSPD_Inertia, Shutdown_SC_BOTS, Shutdown_TSMS_TSMP,
@@ -51,7 +52,7 @@ void car_state_0(SPI_HandleTypeDef hspi_channel, uint8_t END_SD, uint8_t BMS_SD,
 	glcd_etr_refresh(hspi_channel);
 }
 
-void car_state_3(SPI_HandleTypeDef hspi_channel, uint8_t *Refri_Accumulator, uint8_t *Refri_Inverters, uint8_t *Refri_Motors){//afegir les variables carstate3screen i slected com a *
+void car_state_3(SPI_HandleTypeDef hspi_channel, uint8_t *Refri_Accumulator, uint8_t *Refri_Inverters, uint8_t *Refri_Motors, uint8_t *precharge_request_control){//afegir les variables carstate3screen i slected com a *
 	uint8_t leftButtonState = Read_Button_Edge(LEFT_BUTTON_GPIO_Port, LEFT_BUTTON_Pin);
     uint8_t rightButtonState = Read_Button_Edge(RIGHT_BUTTON_GPIO_Port, RIGHT_BUTTON_Pin);
     uint8_t DELAY = 150;
@@ -65,6 +66,7 @@ void car_state_3(SPI_HandleTypeDef hspi_channel, uint8_t *Refri_Accumulator, uin
 		draw_text("PRESS THE CENTRAL", 6, 5, Tahoma7, 2);
 		draw_text("BUTTON TO START", 8, 25, Tahoma10, 2);
 		draw_text("THE PRECHARGE", 15, 45, Tahoma10, 2);
+		*precharge_request_control = HAL_GPIO_ReadPin(OK_BUTTON_GPIO_Port, OK_BUTTON_Pin);
 		if(leftButtonState == 1 || rightButtonState == 1){
 			HAL_Delay(DELAY);
 			carstate3_screen = 1;
@@ -104,12 +106,13 @@ void car_state_9(SPI_HandleTypeDef hspi_channel){
 	glcd_etr_refresh(hspi_channel);
 }
 
-void car_state_12(SPI_HandleTypeDef hspi_channel, uint8_t Racing_Mode, uint8_t rtd){
+void car_state_12(SPI_HandleTypeDef hspi_channel, uint8_t *Racing_Mode, uint8_t *rtd, uint8_t *Enable_Drive){
 	glcd_etr_init(hspi_channel);
 	glcd_etr_blank(hspi_channel);
 	blank_rectangle(1,1,130,64,0);
+	*rtd = car_state_12_control(Racing_Mode, rtd, Enable_Drive);
 	if(rtd==0)
-		scrollDrawing(Racing_Mode, Tahoma7);
+		scrollDrawing(*Racing_Mode, Tahoma7);
 	else{
 		draw_text("PRESS THE CENTRAL", 6, 5, Tahoma10, 2);
 		draw_text("BUTTON AND", 25, 25, Tahoma10, 2);
@@ -118,51 +121,110 @@ void car_state_12(SPI_HandleTypeDef hspi_channel, uint8_t Racing_Mode, uint8_t r
 	glcd_etr_refresh(hspi_channel);
 }
 
-void car_state_14(SPI_HandleTypeDef hspi_channel, uint8_t Enable_Drive){
+void car_state_14(SPI_HandleTypeDef hspi_channel){
 	glcd_etr_init(hspi_channel);
 	glcd_etr_blank(hspi_channel);
 	blank_rectangle(1,1,130,64,0);
 	draw_text("INVERTERS", 15, 10, Tahoma12, 1);
 	draw_text("GETTING  READY", 4, 35, Tahoma12, 1);
 	glcd_etr_refresh(hspi_channel);
+	HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, 1);
 }
 
-void car_state_15(SPI_HandleTypeDef hspi_channel, uint8_t SoC_Average, uint16_t Lowest_CellVolt, uint16_t Highest_CellTemperature, uint16_t Average_CellTemperature, uint8_t *Refri_Accumulator, uint8_t *Refri_Inverters, uint8_t *Refri_Motors, uint8_t Car_Speed, uint8_t APPS1){
+void car_state_15(SPI_HandleTypeDef hspi_channel, uint8_t SoC_Average, uint16_t Lowest_CellVolt, uint16_t Highest_CellTemperature, uint16_t Average_CellTemperature, uint8_t *Refri_Accumulator, uint8_t *Refri_Inverters, uint8_t *Refri_Motors, uint8_t Car_Speed, uint8_t APPS1, uint8_t *Racing_Mode, uint8_t TV_MODE){
 	char StrBuffer[40];
 	static uint8_t flag = 0;
 	uint8_t DELAY = 150;
+	HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, 0);
 	glcd_etr_init(hspi_channel);
 	blank_rectangle(1,1, 129, 129, 0); //Borrem tota la pantalla
 	glcd_etr_blank(hspi_channel);
-  	setLEDs(APPS1);
-	switch(flag){
-	case 0:
-		sprintf(StrBuffer,"Vmin %.2f  Tmax %d  Tavg %d",Lowest_CellVolt*0.0001,Highest_CellTemperature/10,Average_CellTemperature/10);
-		drawXparameter(SoC_Average, 100);
-		writeXparameterValue(Car_Speed);
+	if(*Racing_Mode == 5){
+		setLEDs(APPS1);
+		switch(flag){
+		case 0:
+			sprintf(StrBuffer,"Vmin %.2f  Tmax %d  Tavg %d",Lowest_CellVolt*0.0001,Highest_CellTemperature/10,Average_CellTemperature/10);
+			drawXparameter(SoC_Average, 100);
+			writeXparameterValue(Car_Speed);
+			switch(TV_MODE){
+			case 1:
+				draw_text("1", 110, 25, Tahoma16, 2);
+				break;
+			case 2:
+				draw_text("2", 110, 25, Tahoma16, 1);
+				break;
+			case 3:
+				draw_text("3", 110, 25, Tahoma16, 1);
+				break;
+			case 4:
+				draw_text("4", 110, 25, Tahoma16, 1);
+				break;
+			}
 
-		draw_text(StrBuffer, 4, 1, Tahoma7, 1);
-		draw_text("Km/h", 80, 17, Tahoma7, 1);
-		draw_text("->", 110, 53, Tahoma7, 2);
-		if(flag_right() == 1){
-			flag = 1;
-			HAL_Delay(DELAY);
+			draw_text(StrBuffer, 4, 1, Tahoma7, 1);
+			draw_text("Km/h", 80, 17, Tahoma7, 1);
+			draw_text("->", 110, 53, Tahoma7, 2);
+			if(flag_right() == 1){
+				flag = 1;
+				HAL_Delay(DELAY);
+			}
+			break;
+		case 1:
+			cooling_mode_selection(Refri_Accumulator, Refri_Inverters, Refri_Motors);
+			draw_text("<-", 110, 53, Tahoma7, 2);
+			if(flag_left() == 1){
+				flag = 0;
+				HAL_Delay(DELAY);
+			}
+			break;
 		}
-		break;
-	case 1:
-		cooling_mode_selection(Refri_Accumulator, Refri_Inverters, Refri_Motors);
-		draw_text("<-", 110, 53, Tahoma7, 2);
-		if(flag_left() == 1){
-			flag = 0;
-			HAL_Delay(DELAY);
-		}
-		break;
 	}
+	else{
+		setLEDs(SoC_Average);
+		switch(flag){
+		case 0:
+			sprintf(StrBuffer,"Vmin %.2f  Tmax %d  Tavg %d",Lowest_CellVolt*0.0001,Highest_CellTemperature/10,Average_CellTemperature/10);
+			drawXparameter(Car_Speed, 100);
+			writeXparameterValue(Car_Speed);
+			switch(TV_MODE){
+			case 1:
+				draw_text("1", 110, 25, Tahoma16, 2);
+				break;
+			case 2:
+				draw_text("2", 110, 25, Tahoma16, 1);
+				break;
+			case 3:
+				draw_text("3", 110, 25, Tahoma16, 1);
+				break;
+			case 4:
+				draw_text("4", 110, 25, Tahoma16, 1);
+				break;
+			}
+			draw_text(StrBuffer, 4, 1, Tahoma7, 1);
+			draw_text("Km/h", 80, 17, Tahoma7, 1);
+			draw_text("->", 110, 53, Tahoma7, 2);
+			if(flag_right() == 1){
+				flag = 1;
+				HAL_Delay(DELAY);
+			}
+			break;
+		case 1:
+			cooling_mode_selection(Refri_Accumulator, Refri_Inverters, Refri_Motors);
+			draw_text("<-", 110, 53, Tahoma7, 2);
+			if(flag_left() == 1){
+				flag = 0;
+				HAL_Delay(DELAY);
+			}
+			break;
+		}
+	}
+
 
 	glcd_etr_refresh(hspi_channel);
 }
 
 void car_state_21(SPI_HandleTypeDef hspi_channel){
+	LEDs_off();
 	glcd_etr_init(hspi_channel);
 	glcd_etr_blank(hspi_channel);
 	blank_rectangle(1,1,130,64,0);
@@ -171,16 +233,17 @@ void car_state_21(SPI_HandleTypeDef hspi_channel){
 	draw_rectangle(15, 8, 115, 59, 1);//Dibuja el mismo rectangulo anterior pero desplazado para hacer la linea mas gorda
 	draw_text("ERROR", 20, 20, Tahoma22, 2);
 	glcd_etr_refresh(hspi_channel);
+	HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, 0);
 }
 
 void CAR_STATE_FUNCTION(SPI_HandleTypeDef hspi_channel, uint8_t Car__State, uint8_t PrechargePercentage, uint8_t *precharge_request_control,
-		uint8_t Racing_Mode, uint8_t rtd, uint8_t Enable_Drive, uint8_t SoC_Average, uint8_t Car_Speed, uint16_t Lowest_CellVolt,
+		uint8_t *Racing_Mode, uint8_t *rtd, uint8_t *Enable_Drive, uint8_t SoC_Average, uint8_t Car_Speed, uint16_t Lowest_CellVolt,
 		uint16_t Highest_CellTemperature, uint16_t Average_CellTemperature, uint8_t *Refri_Accumulator,
 		uint8_t *Refri_Inverters, uint8_t *Refri_Motors, uint8_t END_SD, uint8_t BMS_SD, uint8_t IMD_SD,
 		uint8_t Shutdown_Setas, uint8_t Shutdown_BSPD_Inertia, uint8_t Shutdown_SC_BOTS, uint8_t Shutdown_TSMS_TSMP,
 		uint8_t Shutdown_RightTS, uint8_t Shutdown_LeftTS, uint8_t Shutdown_HVBox, uint8_t Shutdown_HVD, 	uint8_t BMS_Disconnect, uint8_t Dash_Disconect, uint8_t Front_Disconenct,
 		uint8_t Ellipse_Disconect, uint8_t Rear_Disconnect, uint8_t APPS1_Disconect, uint8_t APPS2_Disconnect, uint8_t BrakePedal_Disconnect, uint8_t SteeringSensor_Disconnect,
-		uint8_t SuspRR_Disconnect, uint8_t SuspRL_Disconnect, uint8_t SuspFR_Disconnect, uint8_t SuspFL_Disconnect, uint8_t Pitot_Disconnect, uint8_t APPS1){
+		uint8_t SuspRR_Disconnect, uint8_t SuspRL_Disconnect, uint8_t SuspFR_Disconnect, uint8_t SuspFL_Disconnect, uint8_t Pitot_Disconnect, uint8_t APPS1, uint8_t TV_MODE){
 	switch(Car__State){
 		case(0):
 		car_state_0(hspi_channel, END_SD, BMS_SD, IMD_SD, Shutdown_Setas, Shutdown_BSPD_Inertia, Shutdown_SC_BOTS, Shutdown_TSMS_TSMP,
@@ -189,7 +252,7 @@ void CAR_STATE_FUNCTION(SPI_HandleTypeDef hspi_channel, uint8_t Car__State, uint
 				 SuspRR_Disconnect,  SuspRL_Disconnect,  SuspFR_Disconnect,  SuspFL_Disconnect,  Pitot_Disconnect);
 		break;
 		case(3):
-		car_state_3(hspi_channel, Refri_Accumulator, Refri_Inverters, Refri_Motors);
+		car_state_3(hspi_channel, Refri_Accumulator, Refri_Inverters, Refri_Motors, precharge_request_control);
 		break;
 		case(6):
 		car_state_6(hspi_channel, PrechargePercentage, precharge_request_control);
@@ -198,13 +261,13 @@ void CAR_STATE_FUNCTION(SPI_HandleTypeDef hspi_channel, uint8_t Car__State, uint
 		car_state_9(hspi_channel);
 		break;
 		case(12):
-		car_state_12(hspi_channel, Racing_Mode, rtd);
+		car_state_12(hspi_channel, Racing_Mode, rtd, Enable_Drive);
 		break;
 		case(14):
-		car_state_14(hspi_channel, Enable_Drive);
+		car_state_14(hspi_channel);
 		break;
 		case(15):
-		car_state_15(hspi_channel, SoC_Average, Lowest_CellVolt, Highest_CellTemperature, Average_CellTemperature, Refri_Accumulator, Refri_Inverters, Refri_Motors, Car_Speed, APPS1);
+		car_state_15(hspi_channel, SoC_Average, Lowest_CellVolt, Highest_CellTemperature, Average_CellTemperature, Refri_Accumulator, Refri_Inverters, Refri_Motors, Car_Speed, APPS1, Racing_Mode, TV_MODE);
 		break;
 		case(21):
 		car_state_21(hspi_channel);
@@ -717,15 +780,15 @@ void racing_mode_selection(uint8_t *Racing_Mode, uint8_t *RTD) {
     uint8_t rightButtonState = Read_Button_Edge(RIGHT_BUTTON_GPIO_Port, RIGHT_BUTTON_Pin);
     uint8_t DELAY = 150;
 
-    switch (Racing_Mode[0]) {
+    switch (*Racing_Mode) {
         case 1:
             if (downButtonState == 1) {
                 HAL_Delay(DELAY);
-                Racing_Mode[0] = 2;  // Cambiar a 2 después de presionar el botón
+                *Racing_Mode = 2;  // Cambiar a 2 después de presionar el botón
             }
             if (upButtonState == 1) {
                 HAL_Delay(DELAY);
-                Racing_Mode[0] = 5;
+                *Racing_Mode = 5;
             }
             if (leftButtonState == 1 || rightButtonState == 1) {
                 HAL_Delay(DELAY);
@@ -737,11 +800,11 @@ void racing_mode_selection(uint8_t *Racing_Mode, uint8_t *RTD) {
         case 2:
             if (downButtonState == 1) {
                 HAL_Delay(DELAY);
-                Racing_Mode[0] = 3;
+                *Racing_Mode = 3;
             }
             if (upButtonState == 1) {
                 HAL_Delay(DELAY);
-                Racing_Mode[0] = 1;
+                *Racing_Mode = 1;
             }
             if (leftButtonState == 1 || rightButtonState == 1) {
                 HAL_Delay(DELAY);
@@ -752,11 +815,11 @@ void racing_mode_selection(uint8_t *Racing_Mode, uint8_t *RTD) {
         case 3:
             if (downButtonState == 1) {
                 HAL_Delay(DELAY);
-                Racing_Mode[0] = 4;
+                *Racing_Mode = 4;
             }
             if (upButtonState == 1) {
                 HAL_Delay(DELAY);
-                Racing_Mode[0] = 2;
+                *Racing_Mode = 2;
             }
             if (leftButtonState == 1 || rightButtonState == 1) {
                 HAL_Delay(DELAY);
@@ -767,11 +830,11 @@ void racing_mode_selection(uint8_t *Racing_Mode, uint8_t *RTD) {
         case 4:
             if (downButtonState == 1) {
                 HAL_Delay(DELAY);
-                Racing_Mode[0] = 5;
+                *Racing_Mode = 5;
             }
             if (upButtonState == 1) {
             	HAL_Delay(DELAY);
-                Racing_Mode[0] = 3;
+                *Racing_Mode = 3;
             }
             if (leftButtonState == 1 || rightButtonState == 1) {
             	HAL_Delay(DELAY);
@@ -782,11 +845,11 @@ void racing_mode_selection(uint8_t *Racing_Mode, uint8_t *RTD) {
         case 5:
             if (downButtonState == 1) {
             	HAL_Delay(DELAY);
-                Racing_Mode[0] = 1;
+                *Racing_Mode = 1;
             }
             if (upButtonState == 1) {
             	HAL_Delay(DELAY);
-                Racing_Mode[0] = 4;
+                *Racing_Mode = 4;
             }
             if (leftButtonState == 1 || rightButtonState == 1) {
             	HAL_Delay(DELAY);
@@ -823,7 +886,7 @@ uint8_t enable_driving(uint8_t *Enable_Drive, uint8_t *rtd){
 }
 
 uint8_t car_state_12_control(uint8_t *Racing_Mode, uint8_t *rtd, uint8_t *Enable_Drive){
-	if(*rtd==0){
+	if(rtd==0){
 		racing_mode_selection(Racing_Mode, rtd);
 	}
 	else
@@ -831,6 +894,18 @@ uint8_t car_state_12_control(uint8_t *Racing_Mode, uint8_t *rtd, uint8_t *Enable
 		enable_driving(Enable_Drive, rtd);
 	}
 	return *rtd;
+}
+
+void LEDs_off(){
+    HAL_GPIO_WritePin(LED_RED_3_GPIO_Port, LED_RED_3_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(LED_RED_2_GPIO_Port, LED_RED_2_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(LED_YELLOW_3_GPIO_Port, LED_YELLOW_3_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(LED_YELLOW_2_GPIO_Port, LED_YELLOW_2_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(LED_GREEN_3_GPIO_Port, LED_GREEN_3_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(LED_GREEN_2_GPIO_Port, LED_GREEN_2_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin, GPIO_PIN_RESET);
 }
 
 void setLEDs(uint8_t percentage) {

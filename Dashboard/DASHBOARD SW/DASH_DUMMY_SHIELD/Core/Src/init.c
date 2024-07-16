@@ -16,13 +16,13 @@
 void NORMATIVE_INIT(void){
 
 		//Turn On the Buzzer
-	HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, 1);
-
-		//Delays the Sound a Time set by FS Rules 2,5 seconds
-	HAL_Delay(NORMATIVE_TIME_LED);
-
-		//Turns Off the Buzzer
-	HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, 0);
+//	HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, 1);
+//
+//		//Delays the Sound a Time set by FS Rules 2,5 seconds
+//	HAL_Delay(0);
+//
+//		//Turns Off the Buzzer
+//	HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, 0);
 
 		// Turns On the IMD and AMS LEDs
 	HAL_GPIO_WritePin(IMD_LED_GPIO_Port, IMD_LED_Pin,1);

@@ -23,7 +23,6 @@
 /* USER CODE BEGIN Includes */
 #include "graphics.h"
 #include "statemachine.h"
-//#include "buttons.h"
 #include "can.h"
 #include "glcd_etr.h"
 #include "init.h"
@@ -107,8 +106,8 @@ TIM_HandleTypeDef htim14;
 	/* SHUTDOWN  -------------------------------------------------------------*/
 
 	uint8_t END_SD;
-	uint8_t BMS_SD;
-	uint8_t IMD_SD;
+	uint8_t BMS_SD = 1;
+	uint8_t IMD_SD = 1;
 	uint8_t Shutdown_Setas;
 	uint8_t Shutdown_BSPD_Inertia;
 	uint8_t Shutdown_SC_BOTS;
@@ -168,6 +167,7 @@ TIM_HandleTypeDef htim14;
 	uint8_t APPS2;
 	uint8_t Break_Value;
 	uint8_t Steering_sensor_value;
+	uint8_t TV_MODE;
 
 
 /* USER CODE END PV */
@@ -259,20 +259,12 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 	  while (1){
-			switch(Car__State){
-			case(3):
-			Precharge_Request = HAL_GPIO_ReadPin(OK_BUTTON_GPIO_Port, OK_BUTTON_Pin);
-			break;
-			case(12):
-			RTD = car_state_12_control(&Racing_Mode, &RTD, &Enable_Drive);
-			break;
-			}
-			CAR_STATE_FUNCTION(hspi3, Car__State, PrechargePercentage, &Precharge_Request, Racing_Mode, RTD, Enable_Drive,
+			CAR_STATE_FUNCTION(hspi3, Car__State, PrechargePercentage, &Precharge_Request, &Racing_Mode, &RTD, &Enable_Drive,
 					SoC_Average, CarSpeed, Lowest_CellVolt,Highest_CellTemperature,Average_CellTemperature, &Refri_Accumulator, &Refri_Inverters,
 					&Refri_Motors, END_SD, BMS_SD, IMD_SD, Shutdown_Setas, Shutdown_BSPD_Inertia, Shutdown_SC_BOTS, Shutdown_TSMS_TSMP,
 					Shutdown_RightTS, Shutdown_LeftTS, Shutdown_HVBox, Shutdown_HVD,  BMS_Disconnect,  Dash_Disconect,  Front_Disconenct,
 					 Ellipse_Disconect,  Rear_Disconnect,  APPS1_Disconect,  APPS2_Disconnect,  BrakePedal_Disconnect,  SteeringSensor_Disconnect,
-					 SuspRR_Disconnect,  SuspRL_Disconnect,  SuspFR_Disconnect,  SuspFL_Disconnect,  Pitot_Disconnect, APPS1);
+					 SuspRR_Disconnect,  SuspRL_Disconnect,  SuspFR_Disconnect,  SuspFL_Disconnect,  Pitot_Disconnect, APPS1, TV_MODE);
 	  }
     /* USER CODE END WHILE */
 
@@ -629,7 +621,7 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan1) {
 
 	rx_sorter_can1(*hcan1, RxMailbox, RxHeader, RxData, &msg_can1, &Car__State, &PrechargeVoltage, &PrechargePercentage,
 			&CarSpeed, &SoC_Average, &END_SD, &BMS_SD, &IMD_SD, &syncronism1, &Lowest_CellTemperature, &Highest_CellTemperature,
-			&Average_CellTemperature, &VDC_Params, &Lowest_CellVolt, &Highest_CellVolt, &Accu_Volt);
+			&Average_CellTemperature, &VDC_Params, &Lowest_CellVolt, &Highest_CellVolt, &Accu_Volt, &TV_MODE);
 	if(msg == 0)msg = 1;
 }
 
@@ -671,8 +663,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 				msg = 0;
 			break;
 		}
-		BMS_IMD_ERROR(BMS_SD, IMD_SD);
-
+		if(HAL_GetTick() >=5000){
+			BMS_IMD_ERROR(BMS_SD, IMD_SD);
+		}
 		}
 	}
 /* USER CODE END 4 */

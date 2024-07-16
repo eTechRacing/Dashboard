@@ -12,6 +12,7 @@
 
 
 #define NORMATIVE_TIME_LED		2500
+#define NORMATIVE_TIME_BUZZER	250
 
 /**
   * @brief  Initialization of the Systems, such as LEDs and Buzzer, set by FS Rules.

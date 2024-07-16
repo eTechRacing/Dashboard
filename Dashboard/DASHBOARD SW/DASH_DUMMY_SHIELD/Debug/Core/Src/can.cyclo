@@ -5,5 +5,5 @@
 ../Core/Src/can.c:79:6:message_cantx_Keep_Alive	1
 ../Core/Src/can.c:89:6:message_cantx_Mode	1
 ../Core/Src/can.c:99:6:message_cantx_PrechargeRequest	1
-../Core/Src/can.c:110:6:rx_sorter_can1	9
-../Core/Src/can.c:187:6:rx_sorter_can2	9
+../Core/Src/can.c:110:6:rx_sorter_can1	12
+../Core/Src/can.c:193:6:rx_sorter_can2	9

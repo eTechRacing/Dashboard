@@ -110,7 +110,7 @@ void message_cantx_PrechargeRequest (CAN_HandleTypeDef hcan1, CAN_TxHeaderTypeDe
 void rx_sorter_can1(CAN_HandleTypeDef hcan1, uint32_t RxMailbox, CAN_RxHeaderTypeDef RXHeader, uint8_t *RxData, uint8_t *msg_var,
 		uint8_t *Car_State, uint16_t *Precharge_Voltage, uint8_t *Precharge_Percentage, uint8_t *Speed, uint8_t *SoC_Avg,uint8_t *SDC_END, uint8_t *SDC_BMS,uint8_t *SDC_IMD,
 		uint8_t *Sync,  uint16_t *Lowest_CellTemp, uint16_t *Highest_CellTemp, uint16_t *Average_CellTemp, uint8_t *VDC_Max_Tyre_Slip,
-		uint16_t *Lowest_CellVoltage, uint16_t *Highest_CellVoltage, uint32_t *Accumulator_Voltage){
+		uint16_t *Lowest_CellVoltage, uint16_t *Highest_CellVoltage, uint32_t *Accumulator_Voltage, uint8_t *TV_MODE){
 
 	if (HAL_CAN_GetRxMessage(&hcan1, CAN_RX_FIFO0, &RXHeader, RxData)!= HAL_OK){
 		Error_Handler();
@@ -152,6 +152,12 @@ void rx_sorter_can1(CAN_HandleTypeDef hcan1, uint32_t RxMailbox, CAN_RxHeaderTyp
 
 		break;
 
+	case Id_ETAS_Interal_Values:
+
+		*TV_MODE = 0b00000111&RxData[1];
+
+
+		break;
 
 	case Id_Temperatures:
 
