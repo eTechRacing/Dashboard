@@ -10,7 +10,7 @@
 
 #include "main.h"
 
-void BMS_IMD_ERROR(uint8_t BMS_SD, uint8_t IMD_SD);
+void BMS_IMD_ERROR(uint8_t BMS_SD, uint8_t IMD_SD, uint32_t *BMS_SD_SC, uint32_t *IMD_SD_SC);
 void setLEDs(uint8_t percentage);
 void LEDs_off();
 void car_state_0(SPI_HandleTypeDef hspi_channel, uint8_t END_SD, uint8_t BMS_SD, uint8_t IMD_SD,

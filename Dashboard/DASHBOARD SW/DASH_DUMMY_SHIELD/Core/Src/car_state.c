@@ -67,6 +67,7 @@ void car_state_3(SPI_HandleTypeDef hspi_channel, uint8_t *Refri_Accumulator, uin
 		draw_text("BUTTON TO START", 8, 25, Tahoma10, 2);
 		draw_text("THE PRECHARGE", 15, 45, Tahoma10, 2);
 		*precharge_request_control = HAL_GPIO_ReadPin(OK_BUTTON_GPIO_Port, OK_BUTTON_Pin);
+		draw_text("->", 110, 53, Tahoma7, 2);
 		if(leftButtonState == 1 || rightButtonState == 1){
 			HAL_Delay(DELAY);
 			carstate3_screen = 1;
@@ -74,10 +75,11 @@ void car_state_3(SPI_HandleTypeDef hspi_channel, uint8_t *Refri_Accumulator, uin
 	break;
 	case(1):
 		cooling_mode_selection(Refri_Accumulator, Refri_Inverters, Refri_Motors);
-	if(leftButtonState == 1 || rightButtonState == 1){
-		HAL_Delay(DELAY);
-		carstate3_screen = 0;
-	}
+		draw_text("<-", 110, 53, Tahoma7, 2);
+		if(leftButtonState == 1 || rightButtonState == 1){
+			HAL_Delay(DELAY);
+			carstate3_screen = 0;
+		}
 	break;
 	}
 	glcd_etr_refresh(hspi_channel);
@@ -111,7 +113,7 @@ void car_state_12(SPI_HandleTypeDef hspi_channel, uint8_t *Racing_Mode, uint8_t 
 	glcd_etr_blank(hspi_channel);
 	blank_rectangle(1,1,130,64,0);
 	*rtd = car_state_12_control(Racing_Mode, rtd, Enable_Drive);
-	if(rtd==0)
+	if(*rtd==0)
 		scrollDrawing(*Racing_Mode, Tahoma7);
 	else{
 		draw_text("PRESS THE CENTRAL", 6, 5, Tahoma10, 2);
@@ -859,11 +861,18 @@ void racing_mode_selection(uint8_t *Racing_Mode, uint8_t *RTD) {
     }
 }
 
-void BMS_IMD_ERROR(uint8_t BMS_SD, uint8_t IMD_SD){
-	if(BMS_SD==0){
-		HAL_GPIO_WritePin(AMS_LED_GPIO_Port, AMS_LED_Pin, 1);
+void BMS_IMD_ERROR(uint8_t BMS_SD, uint8_t IMD_SD, uint32_t *BMS_SD_SC, uint32_t *IMD_SD_SC){
+
+	if(BMS_SD==1){
+		*BMS_SD_SC = HAL_GetTick();
 	}
-	if(IMD_SD==0){
+	if(IMD_SD==1){
+		*IMD_SD_SC = HAL_GetTick();
+	}
+	if(HAL_GetTick() - *BMS_SD_SC >= 200){
+			HAL_GPIO_WritePin(AMS_LED_GPIO_Port, AMS_LED_Pin, 1);
+		}
+	if(HAL_GetTick() - *IMD_SD_SC >= 200){
 		HAL_GPIO_WritePin(IMD_LED_GPIO_Port, IMD_LED_Pin, 1);
 	}
 }
@@ -886,7 +895,7 @@ uint8_t enable_driving(uint8_t *Enable_Drive, uint8_t *rtd){
 }
 
 uint8_t car_state_12_control(uint8_t *Racing_Mode, uint8_t *rtd, uint8_t *Enable_Drive){
-	if(rtd==0){
+	if(*rtd==0){
 		racing_mode_selection(Racing_Mode, rtd);
 	}
 	else
