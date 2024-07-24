@@ -119,6 +119,9 @@ TIM_HandleTypeDef htim14;
 	uint8_t Shutdown_HVBox;
 	uint8_t Shutdown_HVD;
 
+	uint8_t AMS_LED = 0;
+	uint8_t IMD_LED = 0;
+
 	/* SYNCRONISM  -----------------------------------------------------------*/
 
 	uint8_t syncronism1;
@@ -622,7 +625,7 @@ static void MX_GPIO_Init(void)
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan1) {
 
 	rx_sorter_can1(*hcan1, RxMailbox, RxHeader, RxData, &msg_can1, &Car__State, &PrechargeVoltage, &PrechargePercentage,
-			&CarSpeed, &SoC_Average, &END_SD, &BMS_SD, &IMD_SD, &syncronism1, &Lowest_CellTemperature, &Highest_CellTemperature,
+			&CarSpeed, &SoC_Average, &END_SD, &BMS_SD, &IMD_SD, &AMS_LED, &IMD_LED, &syncronism1, &Lowest_CellTemperature, &Highest_CellTemperature,
 			&Average_CellTemperature, &VDC_Params, &Lowest_CellVolt, &Highest_CellVolt, &Accu_Volt, &TV_MODE);
 	if(msg == 0)msg = 1;
 }
@@ -665,10 +668,25 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 				msg = 0;
 			break;
 		}
-		if(HAL_GetTick() >=5000){
-			BMS_IMD_ERROR(BMS_SD, IMD_SD, &BMS_SD_SC, &IMD_SD_SC);
+			BMS_IMD_ERROR(AMS_LED, IMD_LED, &BMS_SD_SC, &IMD_SD_SC);
+
+			if(BMS_Disconnect==1){
+				HAL_GPIO_WritePin(AMS_LED_GPIO_Port, AMS_LED_Pin, 1);
+				HAL_GPIO_WritePin(IMD_LED_GPIO_Port, IMD_LED_Pin, 1);
+			}
+			if(BMS_Disconnect==0 && AMS_LED ==1){
+				HAL_GPIO_WritePin(AMS_LED_GPIO_Port, AMS_LED_Pin, 0);
+
+			}
+			if(BMS_Disconnect==0 && IMD_LED ==1){
+				HAL_GPIO_WritePin(IMD_LED_GPIO_Port, IMD_LED_Pin, 0);
+
+
+
+
 		}
-		}
+	}
+
 	}
 /* USER CODE END 4 */
 
