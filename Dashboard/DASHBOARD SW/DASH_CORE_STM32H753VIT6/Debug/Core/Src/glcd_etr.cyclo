@@ -1,0 +1,11 @@
+../Core/Src/glcd_etr.c:18:7:glcd_etr_command	1
+../Core/Src/glcd_etr.c:29:7:glcd_etr_init	1
+../Core/Src/glcd_etr.c:51:7:glcd_etr_data	1
+../Core/Src/glcd_etr.c:65:7:glcd_etr_refresh	4
+../Core/Src/glcd_etr.c:100:11:glcd_pixel	6
+../Core/Src/glcd_etr.c:122:11:glcd_etr_blank	2
+../Core/Src/glcd_etr.c:132:11:glcd_etr_blank_region	4
+../Core/Src/glcd_etr.c:154:11:glcd_flip_screen	2
+../Core/Src/glcd_etr.c:167:11:glcd_inverse_screen	2
+../Core/Src/glcd_etr.c:176:11:glcd_test_card	3
+../Core/Src/glcd_etr.c:192:11:glcd_contrast	3

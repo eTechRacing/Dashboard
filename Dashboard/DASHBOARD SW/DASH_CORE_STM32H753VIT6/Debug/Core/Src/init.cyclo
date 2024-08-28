@@ -1,0 +1,2 @@
+../Core/Src/init.c:16:6:NORMATIVE_INIT	1
+../Core/Src/init.c:64:6:VARIABLE_RESET	1
