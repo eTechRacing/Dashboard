@@ -5,7 +5,7 @@
  *      Author: Pol & Carmen
  */
 
-unsigned char glcd_flipped = 0;
+unsigned char glcd_flipped = 1;
 
 
 #include "glcd_etr.h"

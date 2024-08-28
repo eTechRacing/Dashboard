@@ -60,8 +60,8 @@ all: main-build
 main-build: DASH_DUMMY_SHIELD.elf secondary-outputs
 
 # Tool invocations
-DASH_DUMMY_SHIELD.elf DASH_DUMMY_SHIELD.map: $(OBJS) $(USER_OBJS) C:\Users\Usuari\Desktop\DASH_DUMMY_SHIELD\STM32F777VITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "DASH_DUMMY_SHIELD.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\Usuari\Desktop\DASH_DUMMY_SHIELD\STM32F777VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DASH_DUMMY_SHIELD.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+DASH_DUMMY_SHIELD.elf DASH_DUMMY_SHIELD.map: $(OBJS) $(USER_OBJS) C:\Escritorio\ETR\GITS\Dashboard\Dashboard\DASHBOARD\ SW\DASH_DUMMY_SHIELD\STM32F777VITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "DASH_DUMMY_SHIELD.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Escritorio\ETR\GITS\Dashboard\Dashboard\DASHBOARD SW\DASH_DUMMY_SHIELD\STM32F777VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DASH_DUMMY_SHIELD.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
