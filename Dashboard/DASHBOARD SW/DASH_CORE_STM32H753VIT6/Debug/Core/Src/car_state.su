@@ -18,7 +18,7 @@
 ../Core/Src/car_state.c:791:6:cooling_mode_selection	40	static
 ../Core/Src/car_state.c:949:6:racing_mode_selection	24	static
 ../Core/Src/car_state.c:1027:6:BMS_IMD_ERROR	24	static
-../Core/Src/car_state.c:1044:9:enable_driving	16	static
-../Core/Src/car_state.c:1053:9:car_state_12_control	24	static
-../Core/Src/car_state.c:1064:6:LEDs_off	8	static
-../Core/Src/car_state.c:1076:6:setLEDs	24	static
+../Core/Src/car_state.c:1051:9:enable_driving	16	static
+../Core/Src/car_state.c:1060:9:car_state_12_control	24	static
+../Core/Src/car_state.c:1071:6:LEDs_off	8	static
+../Core/Src/car_state.c:1083:6:setLEDs	24	static

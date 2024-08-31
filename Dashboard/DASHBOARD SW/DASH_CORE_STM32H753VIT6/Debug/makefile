@@ -60,8 +60,8 @@ all: main-build
 main-build: DASH_CORE_STM32H753VIT6.elf secondary-outputs
 
 # Tool invocations
-DASH_CORE_STM32H753VIT6.elf DASH_CORE_STM32H753VIT6.map: $(OBJS) $(USER_OBJS) C:\Users\Usuari\Desktop\ETECH\DASH_CORE_STM32H753VIT6\STM32H753VITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "DASH_CORE_STM32H753VIT6.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\Usuari\Desktop\ETECH\DASH_CORE_STM32H753VIT6\STM32H753VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DASH_CORE_STM32H753VIT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+DASH_CORE_STM32H753VIT6.elf DASH_CORE_STM32H753VIT6.map: $(OBJS) $(USER_OBJS) C:\Users\Usuari\Desktop\ETECH\Dashboard\Dashboard\DASHBOARD\ SW\DASH_CORE_STM32H753VIT6\STM32H753VITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "DASH_CORE_STM32H753VIT6.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\Usuari\Desktop\ETECH\Dashboard\Dashboard\DASHBOARD SW\DASH_CORE_STM32H753VIT6\STM32H753VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DASH_CORE_STM32H753VIT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

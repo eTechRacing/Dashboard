@@ -163,7 +163,7 @@ void car_state_15(SPI_HandleTypeDef hspi_channel, uint8_t SoC_Average, uint16_t 
 	blank_rectangle(1,1, 129, 129, 0); //Borrem tota la pantalla
 	glcd_etr_blank(hspi_channel);
 	if(*Racing_Mode == 5){
-		setLEDs(APPS1);
+		setLEDs(SoC_Average);
 		switch(flag){
 		case 0:
 			sprintf(StrBuffer,"Vmin %.2f  Tmax %d  Tavg %d",Lowest_CellVolt*0.0001,Highest_CellTemperature/10,Average_CellTemperature/10);
@@ -1024,7 +1024,7 @@ void racing_mode_selection(uint8_t *Racing_Mode, uint8_t *RTD) {
     }
 }
 
-void BMS_IMD_ERROR(uint8_t BMS_OK, uint8_t IMD_SD, uint32_t *BMS_SD_SC, uint32_t *IMD_SD_SC){
+void BMS_IMD_ERROR(uint8_t BMS_Disconnect, uint8_t BMS_OK, uint8_t BMS_SD, uint8_t IMD_SD, uint32_t *BMS_SD_SC, uint32_t *IMD_SD_SC, uint32_t *BMS_DISC_SC){
 
 	if(BMS_OK==1){
 		*BMS_SD_SC = HAL_GetTick();
@@ -1032,11 +1032,18 @@ void BMS_IMD_ERROR(uint8_t BMS_OK, uint8_t IMD_SD, uint32_t *BMS_SD_SC, uint32_t
 	if(IMD_SD==1){
 		*IMD_SD_SC = HAL_GetTick();
 	}
+	if(BMS_Disconnect==1){
+		*BMS_DISC_SC = HAL_GetTick();
+	}
 	if(HAL_GetTick() - *BMS_SD_SC >= 200){
 			HAL_GPIO_WritePin(AMS_LED_GPIO_Port, AMS_LED_Pin, 1);
 		}
-	if((HAL_GetTick() - *IMD_SD_SC >= 200) && (BMS_OK == 1)){
+	if((HAL_GetTick() - *IMD_SD_SC >= 200) && (BMS_SD == 1)){
 		HAL_GPIO_WritePin(IMD_LED_GPIO_Port, IMD_LED_Pin, 1);
+	}
+	if(HAL_GetTick() - *BMS_DISC_SC >= 200){
+		HAL_GPIO_WritePin(IMD_LED_GPIO_Port, IMD_LED_Pin, 1);
+		HAL_GPIO_WritePin(AMS_LED_GPIO_Port, AMS_LED_Pin, 1);
 	}
 }
 

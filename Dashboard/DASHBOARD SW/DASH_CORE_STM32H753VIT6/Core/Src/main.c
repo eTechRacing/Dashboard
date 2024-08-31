@@ -105,6 +105,7 @@ uint8_t IMD_SD = 1;
 uint8_t BMS_OK = 1;
 uint32_t BMS_SD_SC;
 uint32_t IMD_SD_SC;
+uint32_t BMS_DISC_SC;
 uint8_t Shutdown_Setas;
 uint8_t Shutdown_BSPD_Inertia;
 uint8_t Shutdown_SC_BOTS;
@@ -709,7 +710,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 			break;
 		}
 		if(HAL_GetTick() >=5000){
-			BMS_IMD_ERROR(BMS_OK, IMD_SD, &BMS_SD_SC, &IMD_SD_SC);
+			BMS_IMD_ERROR(BMS_Disconnect, BMS_OK, BMS_SD, IMD_SD, &BMS_SD_SC, &IMD_SD_SC, &BMS_DISC_SC);
 		}
 		}
 	}

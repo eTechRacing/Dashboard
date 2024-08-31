@@ -12,7 +12,7 @@
 
 extern uint16_t counter; //CONTADOR DE LA DASH EN ENDURANCE
 
-void BMS_IMD_ERROR(uint8_t BMS_SD, uint8_t IMD_SD, uint32_t *BMS_SD_SC, uint32_t *IMD_SD_SC);
+void BMS_IMD_ERROR(uint8_t BMS_Disconnect, uint8_t BMS_OK, uint8_t BMS_SD, uint8_t IMD_SD, uint32_t *BMS_SD_SC, uint32_t *IMD_SD_SC, uint32_t *BMS_DISC_SC);
 void setLEDs(uint8_t percentage);
 void LEDs_off();
 void car_state_0(SPI_HandleTypeDef hspi_channel, uint8_t END_SD, uint8_t BMS_SD, uint8_t IMD_SD,
