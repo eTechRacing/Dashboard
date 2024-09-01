@@ -168,6 +168,7 @@ uint8_t Break_Value;
 uint8_t Steering_sensor_value;
 uint8_t TV_MODE;
 uint8_t LV_CURRENT;
+uint8_t TC_WARNING;
 
 uint8_t cunter;
 
@@ -254,7 +255,7 @@ int main(void)
 				Shutdown_RightTS, Shutdown_LeftTS, Shutdown_HVBox, Shutdown_HVD,  BMS_Disconnect,  Dash_Disconect,  Front_Disconenct,
 				 Ellipse_Disconect,  Rear_Disconnect,  APPS1_Disconect,  APPS2_Disconnect,  BrakePedal_Disconnect,  SteeringSensor_Disconnect,
 				 SuspRR_Disconnect,  SuspRL_Disconnect,  SuspFR_Disconnect,  SuspFL_Disconnect,  Pitot_Disconnect, APPS1, APPS2, Break_Value,
-				 Steering_sensor_value, TV_MODE, syncronism1, syncronism2, LV_CURRENT);
+				 Steering_sensor_value, TV_MODE, syncronism1, syncronism2, LV_CURRENT, TC_WARNING);
 }
     /* USER CODE END WHILE */
 
@@ -651,7 +652,7 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 
 	rx_sorter_can1(*hfdcan, RxMailbox, RxHeader, RxData, &msg, &Car__State, &PrechargeVoltage, &PrechargePercentage,
 			&CarSpeed, &SoC_Average, &END_SD, &BMS_SD, &IMD_SD, &syncronism1, &Lowest_CellTemperature, &Highest_CellTemperature,
-			&Average_CellTemperature, &VDC_Params, &Lowest_CellVolt, &Highest_CellVolt, &Accu_Volt, &TV_MODE, &LV_CURRENT);
+			&Average_CellTemperature, &VDC_Params, &Lowest_CellVolt, &Highest_CellVolt, &Accu_Volt, &TV_MODE, &LV_CURRENT, &TC_WARNING);
 	  }
 		  if(hfdcan->Instance==FDCAN2)
 		  {

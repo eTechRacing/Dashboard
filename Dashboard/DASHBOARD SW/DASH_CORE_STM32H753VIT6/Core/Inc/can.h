@@ -131,7 +131,7 @@ void rx_sorter(FDCAN_HandleTypeDef hcan1, uint32_t TxMailbox, FDCAN_RxHeaderType
 void rx_sorter_can1(FDCAN_HandleTypeDef hcan1, uint32_t RxMailbox, FDCAN_RxHeaderTypeDef RXHeader, uint8_t *RxData, uint8_t *msg_var,
 		uint8_t *Car_State, uint16_t *Precharge_Voltage, uint8_t *Precharge_Percentage, uint8_t *Speed, uint8_t *SoC_Avg,uint8_t *SDC_END, uint8_t *SDC_BMS,uint8_t *SDC_IMD,
 		uint8_t *Sync,  uint16_t *Lowest_CellTemp, uint16_t *Highest_CellTemp, uint16_t *Average_CellTemp, uint8_t *VDC_Max_Tyre_Slip,
-		uint16_t *Lowest_CellVoltage, uint16_t *Highest_CellVoltage, uint32_t *Accumulator_Voltage, uint8_t *TV_MODE, uint8_t *LV_CURRENT);
+		uint16_t *Lowest_CellVoltage, uint16_t *Highest_CellVoltage, uint32_t *Accumulator_Voltage, uint8_t *TV_MODE, uint8_t *LV_CURRENT, uint8_t *TC_WARNINGS);
 /**
   * @brief  Takes the Data from the CAN2 Message and sorts it in
   * 		different variables depending of the ID and position

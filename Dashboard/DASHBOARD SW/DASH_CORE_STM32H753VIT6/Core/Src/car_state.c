@@ -152,126 +152,73 @@ void car_state_14(SPI_HandleTypeDef hspi_channel){
 }
 
 void car_state_15(SPI_HandleTypeDef hspi_channel, uint8_t SoC_Average, uint16_t Lowest_CellVolt, uint16_t Highest_CellTemperature, uint16_t Average_CellTemperature,
-		uint8_t *Refri_Accumulator, uint8_t *Refri_Inverters, uint8_t *Refri_Motors, uint8_t Car_Speed, uint8_t APPS1, uint8_t *Racing_Mode, uint8_t TV_MODE, uint8_t LV_CURRENT){
+		uint8_t *Refri_Accumulator, uint8_t *Refri_Inverters, uint8_t *Refri_Motors, uint8_t Car_Speed, uint8_t APPS1, uint8_t *Racing_Mode, uint8_t TV_MODE, uint8_t LV_CURRENT, uint8_t TC_WARNING){
 	char StrBuffer[40];
 	static uint8_t flag = 0;
 	uint8_t DELAY = 150;
-	uint8_t centralButtonState = Read_Button_Edge(OK_BUTTON_GPIO_Port, OK_BUTTON_Pin);
-	static uint32_t counter;
 	HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, 0);
 	glcd_etr_init(hspi_channel);
 	blank_rectangle(1,1, 129, 129, 0); //Borrem tota la pantalla
 	glcd_etr_blank(hspi_channel);
-	if(*Racing_Mode == 5){
-		setLEDs(SoC_Average);
-		switch(flag){
-		case 0:
-			sprintf(StrBuffer,"Vmin %.2f  Tmax %d  Tavg %d",Lowest_CellVolt*0.0001,Highest_CellTemperature/10,Average_CellTemperature/10);
-			drawXparameter(SoC_Average, 100);
-			writeXparameterValue(Car_Speed);
-			switch(TV_MODE){
-			case 1:
-				draw_text("1", 110, 25, Tahoma16, 2);
-				break;
-			case 2:
-				draw_text("2", 110, 25, Tahoma16, 1);
-				break;
-			case 3:
-				draw_text("3", 110, 25, Tahoma16, 1);
-				break;
-			case 4:
-				draw_text("4", 110, 25, Tahoma16, 1);
-				break;
-			}
-			draw_text(StrBuffer, 4, 1, Tahoma7, 1);
-			draw_text("Km/h", 80, 17, Tahoma7, 1);
-			draw_text("->", 110, 53, Tahoma7, 2);
-			draw_text("<-", 100, 53, Tahoma7, 2);
-			if(flag_right() == 1){
-				flag = 1;
-				HAL_Delay(DELAY);
-			}
-			if(flag_left() == 1){
-				flag = 2;
-				HAL_Delay(DELAY);
-			}
-			break;
+	uint8_t LEDS_DASH = 0;
+	if(TC_WARNING == 0){
+		LEDS_DASH = 0;
+	}else{
+		LEDS_DASH = 100;
+	}
+	setLEDs(LEDS_DASH);
+	switch(flag){
+	case 0:
+		sprintf(StrBuffer,"Vmin %.2f  Tmax %d  Tavg %d",Lowest_CellVolt*0.0001,Highest_CellTemperature/10,Average_CellTemperature/10);
+		drawXparameter(SoC_Average, 100);
+		writeXparameterValue(Car_Speed);
+		switch(TV_MODE){
 		case 1:
-			cooling_mode_selection(Refri_Accumulator, Refri_Inverters, Refri_Motors);
-			draw_text("<-", 110, 53, Tahoma7, 2);
-			if(flag_left() == 1){
-				flag = 0;
-				HAL_Delay(DELAY);
-			}
+			draw_text("1", 110, 25, Tahoma16, 2);
 			break;
 		case 2:
-            draw_text("->", 110, 53, Tahoma7, 2);
-            if (centralButtonState == 1) {
-                counter = 0;
-            } else {
-                counter = HAL_GetTick();
-            }
-            writeXparameterValue(counter / 1000);
-            if (flag_right() == 1) {
-                flag = 0;
-                HAL_Delay(DELAY);
-            }
-            break;
-		}
-	}
-	else{
-		setLEDs(SoC_Average);
-		switch(flag){
-		case 0:
-			sprintf(StrBuffer,"Vmin %.2f  Tmax %d  Tavg %d",Lowest_CellVolt*0.0001,Highest_CellTemperature/10,Average_CellTemperature/10);
-			drawXparameter(Car_Speed, 100);
-			writeXparameterValue(Car_Speed);
-			switch(TV_MODE){
-			case 1:
-				draw_text("1", 110, 25, Tahoma16, 2);
-				break;
-			case 2:
-				draw_text("2", 110, 25, Tahoma16, 1);
-				break;
-			case 3:
-				draw_text("3", 110, 25, Tahoma16, 1);
-				break;
-			case 4:
-				draw_text("4", 110, 25, Tahoma16, 1);
-				break;
-			}
-			draw_text(StrBuffer, 4, 1, Tahoma7, 1);
-			draw_text("Km/h", 80, 17, Tahoma7, 1);
-			draw_text("->", 110, 53, Tahoma7, 2);
-			if(flag_right() == 1){
-				flag = 1;
-				HAL_Delay(DELAY);
-			}
-			if(flag_left() == 1){
-				flag = 2;
-				HAL_Delay(DELAY);
-			}
+			draw_text("2", 110, 25, Tahoma16, 1);
 			break;
-		case 1:
-			cooling_mode_selection(Refri_Accumulator, Refri_Inverters, Refri_Motors);
-			draw_text("<-", 110, 53, Tahoma7, 2);
-			if(flag_left() == 1){
-				flag = 0;
-				HAL_Delay(DELAY);
-			}
+		case 3:
+			draw_text("3", 110, 25, Tahoma16, 1);
 			break;
-		case 2:
-            draw_text("->", 110, 53, Tahoma7, 2);
-            writeXparameterValue(LV_CURRENT);
-            if (flag_right() == 1) {
-                flag = 0;
-                HAL_Delay(DELAY);
-            }
-            break;
+		case 4:
+			draw_text("4", 110, 25, Tahoma16, 1);
+			break;
 		}
+		draw_text(StrBuffer, 4, 1, Tahoma7, 1);
+		draw_text("Km/h", 80, 17, Tahoma7, 1);
+		draw_text("->", 110, 53, Tahoma7, 2);
+		if(flag_right() == 1){
+			flag = 1;
+			HAL_Delay(DELAY);
+		}
+		if(flag_left() == 1){
+			flag = 2;
+			HAL_Delay(DELAY);
+		}
+		break;
+	case 1:
+		cooling_mode_selection(Refri_Accumulator, Refri_Inverters, Refri_Motors);
+		draw_text("<-", 110, 53, Tahoma7, 2);
+		if(flag_left() == 1){
+			flag = 0;
+			HAL_Delay(DELAY);
+		}
+		break;
+	case 2:
+		draw_text("->", 110, 53, Tahoma7, 2);
+		writeXparameterValue(LV_CURRENT);
+		if (flag_right() == 1) {
+			flag = 0;
+			HAL_Delay(DELAY);
+		}
+		break;
 	}
+
 	glcd_etr_refresh(hspi_channel);
 }
+
 
 void car_state_21(SPI_HandleTypeDef hspi_channel){
 	LEDs_off();
@@ -294,7 +241,7 @@ void CAR_STATE_FUNCTION(SPI_HandleTypeDef hspi_channel, uint8_t Car__State, uint
 		uint8_t Shutdown_RightTS, uint8_t Shutdown_LeftTS, uint8_t Shutdown_HVBox, uint8_t Shutdown_HVD, 	uint8_t BMS_Disconnect, uint8_t Dash_Disconect, uint8_t Front_Disconenct,
 		uint8_t Ellipse_Disconect, uint8_t Rear_Disconnect, uint8_t APPS1_Disconect, uint8_t APPS2_Disconnect, uint8_t BrakePedal_Disconnect, uint8_t SteeringSensor_Disconnect,
 		uint8_t SuspRR_Disconnect, uint8_t SuspRL_Disconnect, uint8_t SuspFR_Disconnect, uint8_t SuspFL_Disconnect, uint8_t Pitot_Disconnect, uint8_t APPS1, uint8_t APPS2,
-		uint8_t Break_Value, uint8_t Steering_sensor_value, uint8_t TV_MODE, uint8_t syncronism1, uint8_t syncronism2, uint8_t LV_CURRENT){
+		uint8_t Break_Value, uint8_t Steering_sensor_value, uint8_t TV_MODE, uint8_t syncronism1, uint8_t syncronism2, uint8_t LV_CURRENT, uint8_t TC_WARNING){
 	switch(Car__State){
 		case(0):
 		car_state_0(hspi_channel, END_SD, BMS_SD, IMD_SD, Shutdown_Setas, Shutdown_BSPD_Inertia, Shutdown_SC_BOTS, Shutdown_TSMS_TSMP,
@@ -320,7 +267,7 @@ void CAR_STATE_FUNCTION(SPI_HandleTypeDef hspi_channel, uint8_t Car__State, uint
 		break;
 		case(15):
 		car_state_15(hspi_channel, SoC_Average, Lowest_CellVolt, Highest_CellTemperature, Average_CellTemperature, Refri_Accumulator,
-				Refri_Inverters, Refri_Motors, Car_Speed, APPS1, Racing_Mode, TV_MODE, LV_CURRENT);
+				Refri_Inverters, Refri_Motors, Car_Speed, APPS1, Racing_Mode, TV_MODE, LV_CURRENT, TC_WARNING);
 		break;
 		case(21):
 		car_state_21(hspi_channel);
