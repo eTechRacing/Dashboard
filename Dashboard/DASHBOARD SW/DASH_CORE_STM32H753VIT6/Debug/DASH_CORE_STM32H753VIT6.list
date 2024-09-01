@@ -1933,8 +1933,8 @@ void car_state_15(SPI_HandleTypeDef hspi_channel, uint8_t SoC_Average, uint16_t 
  80012d4:	781b      	ldrb	r3, [r3, #0]
  80012d6:	2b05      	cmp	r3, #5
  80012d8:	f040 80ff 	bne.w	80014da <car_state_15+0x27a>
-		setLEDs(APPS1);
- 80012dc:	f897 30e0 	ldrb.w	r3, [r7, #224]	@ 0xe0
+		setLEDs(SoC_Average);
+ 80012dc:	f897 30c0 	ldrb.w	r3, [r7, #192]	@ 0xc0
  80012e0:	4618      	mov	r0, r3
  80012e2:	f001 fd61 	bl	8002da8 <setLEDs>
 		switch(flag){
