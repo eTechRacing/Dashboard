@@ -1,0 +1,2 @@
+../Core/Src/stm32_adafruit_ts.c:16:9:BSP_TS_Init	24	static
+../Core/Src/stm32_adafruit_ts.c:40:6:BSP_TS_GetState	40	static
