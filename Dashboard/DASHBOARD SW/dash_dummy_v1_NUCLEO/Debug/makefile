@@ -60,8 +60,8 @@ all: main-build
 main-build: dash_dummy_v1_NUCLEO.elf secondary-outputs
 
 # Tool invocations
-dash_dummy_v1_NUCLEO.elf dash_dummy_v1_NUCLEO.map: $(OBJS) $(USER_OBJS) C:\Users\cunio\STM32CubeIDE\workspace_1.16.0\dash_dummy_v1_NUCLEO\STM32L496ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "dash_dummy_v1_NUCLEO.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\cunio\STM32CubeIDE\workspace_1.16.0\dash_dummy_v1_NUCLEO\STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="dash_dummy_v1_NUCLEO.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+dash_dummy_v1_NUCLEO.elf dash_dummy_v1_NUCLEO.map: $(OBJS) $(USER_OBJS) C:\Users\cunio\Documents\GitHub\Dashboard\Dashboard\DASHBOARD\ SW\dash_dummy_v1_NUCLEO\STM32L496ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "dash_dummy_v1_NUCLEO.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\cunio\Documents\GitHub\Dashboard\Dashboard\DASHBOARD SW\dash_dummy_v1_NUCLEO\STM32L496ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="dash_dummy_v1_NUCLEO.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
