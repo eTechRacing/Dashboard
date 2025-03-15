@@ -1,0 +1,4 @@
+../Core/Src/DASH/etr_screens.c:23:6:ETR_Screen_Init	8	static
+../Core/Src/DASH/etr_screens.c:31:6:ETR_Screen_Shutdown	4	static
+../Core/Src/DASH/etr_screens.c:35:6:ETR_Screen_InitPrecharge	4	static
+../Core/Src/DASH/etr_screens.c:39:6:ETR_Screen_PrechargeDone	4	static
