@@ -18,6 +18,7 @@ RM := rm -rf
 -include Core/Src/LCD/subdir.mk
 -include Core/Src/FONTS/subdir.mk
 -include Core/Src/DASH/subdir.mk
+-include Core/Src/CAN/subdir.mk
 -include Core/Src/subdir.mk
 -include objects.mk
 
@@ -67,8 +68,8 @@ all: main-build
 main-build: NUCLEO\ CHIQUITITA\ DRIVER\ ANTIGUO.elf secondary-outputs
 
 # Tool invocations
-NUCLEO\ CHIQUITITA\ DRIVER\ ANTIGUO.elf NUCLEO\ CHIQUITITA\ DRIVER\ ANTIGUO.map: $(OBJS) $(USER_OBJS) C:\Users\cunio\STM32CubeIDE\workspace_1.16.0\NUCLEO\ CHIQUITITA\ DRIVER\ ANTIGUO\STM32L476RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "NUCLEO CHIQUITITA DRIVER ANTIGUO.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\cunio\STM32CubeIDE\workspace_1.16.0\NUCLEO CHIQUITITA DRIVER ANTIGUO\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUCLEO CHIQUITITA DRIVER ANTIGUO.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+NUCLEO\ CHIQUITITA\ DRIVER\ ANTIGUO.elf NUCLEO\ CHIQUITITA\ DRIVER\ ANTIGUO.map: $(OBJS) $(USER_OBJS) C:\Users\cunio\Documents\GitHub\Dashboard\Dashboard\DASHBOARD\ SW\NUCLEO\ CHIQUITITA\ DRIVER\ ANTIGUO\STM32L476RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "NUCLEO CHIQUITITA DRIVER ANTIGUO.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\cunio\Documents\GitHub\Dashboard\Dashboard\DASHBOARD SW\NUCLEO CHIQUITITA DRIVER ANTIGUO\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUCLEO CHIQUITITA DRIVER ANTIGUO.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
